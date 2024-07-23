@@ -8,6 +8,7 @@ namespace ResumeBackendFinal.Models.Contexts
         public DataContext(DbContextOptions options) : base(options) { }
         public DbSet<ContactPost> ContactPosts { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
