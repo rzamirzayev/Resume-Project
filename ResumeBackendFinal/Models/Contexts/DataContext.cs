@@ -12,6 +12,8 @@ namespace ResumeBackendFinal.Models.Contexts
 
         public DbSet<Project> Projects { get; set; }
 
+        public DbSet<BlogPost> BlogPosts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
