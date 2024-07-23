@@ -10,6 +10,8 @@ namespace ResumeBackendFinal.Models.Contexts
         public DbSet<Service> Services { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
