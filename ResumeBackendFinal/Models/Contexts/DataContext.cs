@@ -14,6 +14,11 @@ namespace ResumeBackendFinal.Models.Contexts
 
         public DbSet<BlogPost> BlogPosts { get; set; }
 
+        public DbSet<SkillGroup> SkillGroups { get; set; }  
+
+        public DbSet<SkillType> SkillTypes { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
