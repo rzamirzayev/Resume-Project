@@ -13,5 +13,9 @@ namespace ResumeBackendFinal.Models.Contexts
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
     }
 }

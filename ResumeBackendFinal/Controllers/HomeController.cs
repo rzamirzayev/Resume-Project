@@ -1,9 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using ResumeBackendFinal.Models.Contexts;
+using ResumeBackendFinal.Models.Entities;
 
 namespace ResumeBackendFinal.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext db;
+
+        public HomeController(DataContext db) {
+            this.db = db;
+        }
         public IActionResult Index()
         {
             return View();
@@ -14,9 +22,23 @@ namespace ResumeBackendFinal.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Contact(string s)
+        public IActionResult Contact(string fullName,string email,string subject,string content)
         {
-            return View();
+            var post = new ContactPost
+            {
+                FullName = fullName,
+                Email = email,
+                Subject = subject,
+                Content = content,
+                CreatedAt= DateTime.Now
+            };
+            db.ContactPosts.Add(post);
+            db.SaveChanges();
+            return Json(new
+            {
+                error=false,
+                message="Muraciet qebul olundu."
+            });
         }
 
         public IActionResult Resume()
