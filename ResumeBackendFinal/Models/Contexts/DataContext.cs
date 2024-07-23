@@ -20,6 +20,10 @@ namespace ResumeBackendFinal.Models.Contexts
 
         public DbSet<Skill> Skills { get; set; }
 
+        public DbSet<PersonSkill> PersonSkills { get; set; }
+
+        public DbSet<Person> People { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
