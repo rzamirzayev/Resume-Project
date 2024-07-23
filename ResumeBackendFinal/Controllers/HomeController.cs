@@ -8,5 +8,20 @@ namespace ResumeBackendFinal.Controllers
         {
             return View();
         }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Contact(string s)
+        {
+            return View();
+        }
+
+        public IActionResult Resume()
+        {
+            return View();
+        }
     }
 }
