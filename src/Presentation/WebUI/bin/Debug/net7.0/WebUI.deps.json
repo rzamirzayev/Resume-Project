@@ -10,7 +10,9 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "7.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
-          "Persistence": "1.0.0"
+          "Persistence": "1.0.0",
+          "Services": "1.0.0",
+          "Services.Implementation": "1.0.0"
         },
         "runtime": {
           "WebUI.dll": {}
@@ -570,6 +572,21 @@
         "runtime": {
           "Persistence.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "runtime": {
+          "Services.dll": {}
+        }
+      },
+      "Services.Implementation/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Services": "1.0.0"
+        },
+        "runtime": {
+          "Services.Implementation.dll": {}
+        }
       }
     }
   },
@@ -1005,6 +1022,16 @@
       "sha512": ""
     },
     "Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services.Implementation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

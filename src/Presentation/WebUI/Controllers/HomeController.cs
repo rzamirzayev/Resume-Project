@@ -1,15 +1,18 @@
 ﻿using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Contexts;
+using Services;
 
 namespace WebUI.Controllers
 {
     public class HomeController : Controller
     {
         private readonly DataContext db;
+        private readonly IContactPostService contactPostService;
 
-        public HomeController(DataContext db) {
+        public HomeController(DataContext db,IContactPostService contactPostService) {
             this.db = db;
+            this.contactPostService = contactPostService;
         }
         public IActionResult Index()
         {
@@ -23,21 +26,12 @@ namespace WebUI.Controllers
         [HttpPost]
         public IActionResult Contact(string fullName,string email,string subject,string content)
         {
-            var post = new ContactPost
-            {
-                FullName = fullName,
-                Email = email,
-                Subject = subject,
-                Content = content,
-                CreatedAt= DateTime.Now
-            };
-            db.ContactPosts.Add(post);
-            db.SaveChanges();
+            var responseMessage=contactPostService.Add(fullName,email,subject,content);
             return Json(new
             {
-                error=false,
-                message="Muraciet qebul olundu."
-            });
+                error = false,
+                message = responseMessage
+            }); ;
         }
 
         public IActionResult Resume()

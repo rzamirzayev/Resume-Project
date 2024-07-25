@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
+using Services;
+using Services.Implementation;
 
 namespace WebUI
 {
@@ -11,10 +13,12 @@ namespace WebUI
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);
-            builder.Services.AddDbContext<DataContext>(cfg =>
+            builder.Services.AddDbContext<DbContext,DataContext>(cfg =>
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
+
+            builder.Services.AddScoped<IContactPostService, ContactPostService>();
 
             var app = builder.Build();
             app.UseStaticFiles();

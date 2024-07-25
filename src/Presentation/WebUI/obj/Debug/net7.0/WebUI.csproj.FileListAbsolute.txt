@@ -76,3 +76,7 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Services.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Services.Implementation.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Services.Implementation.pdb
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Services.pdb

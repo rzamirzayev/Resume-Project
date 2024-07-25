@@ -1091,6 +1091,31 @@
         "runtime": {
           "bin/placeholder/Persistence.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
+      },
+      "Services.Implementation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.Implementation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.Implementation.dll": {}
+        }
       }
     }
   },
@@ -2956,13 +2981,25 @@
       "type": "project",
       "path": "../../Infrastructure/Persistence/Persistence.csproj",
       "msbuildProject": "../../Infrastructure/Persistence/Persistence.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Services/Services.csproj",
+      "msbuildProject": "../../Core/Services/Services.csproj"
+    },
+    "Services.Implementation/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Services.Implementation/Services.Implementation.csproj",
+      "msbuildProject": "../../Core/Services.Implementation/Services.Implementation.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.EntityFrameworkCore.Design >= 7.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
-      "Persistence >= 1.0.0"
+      "Persistence >= 1.0.0",
+      "Services >= 1.0.0",
+      "Services.Implementation >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2992,6 +3029,12 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services.Implementation\\Services.Implementation.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services.Implementation\\Services.Implementation.csproj"
+            },
+            "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services\\Services.csproj"
+            },
             "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Infrastructure\\Persistence\\Persistence.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Infrastructure\\Persistence\\Persistence.csproj"
             }
