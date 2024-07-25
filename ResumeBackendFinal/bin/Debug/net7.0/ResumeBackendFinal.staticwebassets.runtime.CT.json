@@ -492,6 +492,20 @@
             },
             "Patterns": null
           },
+          "overrides": {
+            "Children": {
+              "toastr.override.js": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "js/overrides/toastr.override.js"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
+            "Patterns": null
+          },
           "vendors": {
             "Children": {
               "bootstrap.min.js": {
@@ -545,6 +559,50 @@
                 "Asset": {
                   "ContentRootIndex": 0,
                   "SubPath": "js/vendors/owl.carousel.min.js"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      },
+      "lib": {
+        "Children": {
+          "toastr.js": {
+            "Children": {
+              "toastr.css": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/toastr.js/toastr.css"
+                },
+                "Patterns": null
+              },
+              "toastr.js.map": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/toastr.js/toastr.js.map"
+                },
+                "Patterns": null
+              },
+              "toastr.min.css": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/toastr.js/toastr.min.css"
+                },
+                "Patterns": null
+              },
+              "toastr.min.js": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/toastr.js/toastr.min.js"
                 },
                 "Patterns": null
               }

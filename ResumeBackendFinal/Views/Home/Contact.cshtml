@@ -65,7 +65,7 @@
                     <ul class="row">
                         <li class="col-sm-4">
                             <label>
-                                <input type="text" class="form-control" name="fullName" id="name" placeholder="NAME">
+                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="NAME">
                             </label>
                         </li>
                         <li class="col-sm-4">
@@ -75,12 +75,12 @@
                         </li>
                         <li class="col-sm-4">
                             <label>
-                                <input type="text" class="form-control" name="subject" id="company" placeholder="SUBJECT">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="SUBJECT">
                             </label>
                         </li>
                         <li class="col-sm-12">
                             <label>
-                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="CONTENT..."></textarea>
+                                <textarea class="form-control" name="content" id="content" rows="5" placeholder="CONTENT..."></textarea>
                             </label>
                         </li>
                         <li class="col-sm-12">
@@ -92,3 +92,32 @@
         </div>
     </section>
 </div>
+@section addjs{
+    <script>
+    const form=document.querySelector("#contact_form");
+    form.addEventListener('submit',function(e){
+        let element=e.currentTarget;
+        e.preventDefault();
+        const fd=new FormData(e.currentTarget);
+
+        fetch(`${location.href}`,{
+            method:'POST',
+            body:fd,
+            headers:{}
+        })
+            .then(response=>response.json())
+            .then(response=>{
+                if(response.error==false){
+                    toastr.success(response.message,"Success");
+                    e.currentTarget.reset();
+                    retur;
+                }
+            })
+            .catch(e=>{
+                console.log(e);
+            })
+    })
+
+</script>
+}
+

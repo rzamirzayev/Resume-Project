@@ -6,7 +6,7 @@ namespace ResumeBackendFinal.Models.Contexts
     public class DataContext:DbContext
     {
         public DataContext(DbContextOptions options) : base(options) { }
-        public DbSet<ContactPost> ContactPosts { get; set; }
+
         public DbSet<Service> Services { get; set; }
         public DbSet<Category> Categories { get; set; }
 
@@ -23,6 +23,8 @@ namespace ResumeBackendFinal.Models.Contexts
         public DbSet<PersonSkill> PersonSkills { get; set; }
 
         public DbSet<Person> People { get; set; }
+
+        public DbSet<ContactPost> ContactPosts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -217,6 +217,10 @@
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\js\\overrides\\toastr.override.js",
+      "PackagePath": "staticwebassets\\js\\overrides\\toastr.override.js"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\js\\vendors\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\vendors\\bootstrap.min.js"
     },
@@ -239,6 +243,22 @@
     {
       "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\js\\vendors\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\js\\vendors\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\lib\\toastr.js\\toastr.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\lib\\toastr.js\\toastr.js.map",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\lib\\toastr.js\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\ResumeBackendFinal\\wwwroot\\lib\\toastr.js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ResumeBackendFinal.Microsoft.AspNetCore.StaticWebAssets.props",
