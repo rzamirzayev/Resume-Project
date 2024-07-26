@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Contexts
@@ -26,14 +27,27 @@ namespace Persistence.Contexts
 
         public DbSet<ContactPost> ContactPosts { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
-        public override int SaveChanges()
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            return base.SaveChanges();
+            foreach (var entry in this.ChangeTracker.Entries<ICreateEntity>())
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreatedAt = DateTime.Now;
+                }
+                else
+                {
+                    entry.Property(m => m.CreatedAt).IsModified = false;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }

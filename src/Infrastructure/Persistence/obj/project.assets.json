@@ -1088,6 +1088,20 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        }
       }
     }
   },
@@ -2973,6 +2987,11 @@
       "type": "project",
       "path": "../../Core/Domain/Domain.csproj",
       "msbuildProject": "../../Core/Domain/Domain.csproj"
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Repositories/Repositories.csproj",
+      "msbuildProject": "../../Core/Repositories/Repositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2980,7 +2999,8 @@
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.20"
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
+      "Repositories >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3012,6 +3032,9 @@
           "projectReferences": {
             "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Repositories\\Repositories.csproj"
             }
           }
         }

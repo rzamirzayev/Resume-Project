@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using Domain.StableModels;
+
+namespace Domain.Entities
 {
     public class Person
     {

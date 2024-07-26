@@ -1,5 +1,7 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Repositories;
+using Repositories.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +10,9 @@ using System.Threading.Tasks;
 
 namespace Services.Implementation
 {
-    public class ContactPostService : IContactPostService
+    public class ContactPostService(IContactPostRepository contactPostRepository): IContactPostService
     {
-        private readonly DbContext db;
 
-        public ContactPostService(DbContext db) {
-            this.db = db;
-        }
         public string Add(string fullName, string email, string subject, string content)
         {
             var post = new ContactPost
@@ -22,11 +20,9 @@ namespace Services.Implementation
                 FullName = fullName,
                 Email = email,
                 Subject = subject,
-                Content = content,
-                CreatedAt = DateTime.Now
+                Content = content
             };
-            db.Set<ContactPost>().Add(post);
-            db.SaveChanges();
+
             return "Muraciet qebul olundu.";
         }
     }
