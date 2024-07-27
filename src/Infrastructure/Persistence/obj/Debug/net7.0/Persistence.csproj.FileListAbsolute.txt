@@ -15,3 +15,5 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\obj\De
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\obj\Debug\net7.0\Persistence.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\obj\Debug\net7.0\Persistence.genruntimeconfig.cache
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\obj\Debug\net7.0\ref\Persistence.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\bin\Debug\net7.0\Repositories.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Infrastructure\Persistence\bin\Debug\net7.0\Repositories.pdb

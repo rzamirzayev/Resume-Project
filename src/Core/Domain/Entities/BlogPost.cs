@@ -3,8 +3,8 @@
     public class BlogPost
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Body { get; set; }
+        public required string Title { get; set; }
+        public required string Body { get; set; }
         public string ImagePath { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }

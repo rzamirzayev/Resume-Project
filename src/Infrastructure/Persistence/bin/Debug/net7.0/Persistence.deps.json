@@ -11,7 +11,8 @@
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.20"
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.20",
+          "Repositories": "1.0.0"
         },
         "runtime": {
           "Persistence.dll": {}
@@ -623,6 +624,15 @@
         "runtime": {
           "Domain.dll": {}
         }
+      },
+      "Repositories/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
+        },
+        "runtime": {
+          "Repositories.dll": {}
+        }
       }
     }
   },
@@ -1060,6 +1070,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

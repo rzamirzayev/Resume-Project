@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.Common
 {
-    public abstract class AsyncRepository<T> : IAsyncRepository<T> where T : class, TEntity
+    public abstract class AsyncRepository<T> : IAsyncRepository<T> where T : class
     {
         private readonly DbContext db;
 
@@ -43,12 +43,12 @@ namespace Repositories.Common
             return entry;
         }
 
-        public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken = default)
-        {
-            var query = db.Set<T>().AsQueryable();
-            var entry = await query.FirstOrDefaultAsync(m => m.Id == id, cancellationToken);
-            return entry;
-        }
+        //public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+        //{
+        //    var query = db.Set<T>().AsQueryable();
+        //    var entry = await query.FirstOrDefaultAsync(m => m.Id == id, cancellationToken);
+        //    return entry;
+        //}
 
         public void Remove(T entry)
         {

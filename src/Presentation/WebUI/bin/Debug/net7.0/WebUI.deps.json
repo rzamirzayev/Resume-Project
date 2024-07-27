@@ -2508,10 +2508,20 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.20",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
+          "Repositories": "1.0.0"
         },
         "runtime": {
           "Persistence.dll": {}
+        }
+      },
+      "Repositories/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
+        },
+        "runtime": {
+          "Repositories.dll": {}
         }
       },
       "Services/1.0.0": {
@@ -2523,6 +2533,7 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Repositories": "1.0.0",
           "Services": "1.0.0"
         },
         "runtime": {
@@ -4097,6 +4108,11 @@
       "sha512": ""
     },
     "Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

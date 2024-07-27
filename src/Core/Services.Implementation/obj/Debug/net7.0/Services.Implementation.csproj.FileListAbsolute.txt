@@ -15,3 +15,5 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\refint\Services.Implementation.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\Services.Implementation.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\ref\Services.Implementation.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.pdb
