@@ -16,9 +16,9 @@ namespace Repositories.Common
         {
             this.db = db;
         }
-        public void AddAsync(T entry, CancellationToken cancellationToken = default)
+        public async Task AddAsync(T entry, CancellationToken cancellationToken = default)
         {
-            db.Set<T>().AddAsync(entry, cancellationToken);
+            await db.Set<T>().AddAsync(entry, cancellationToken);
         }
 
         public void Edit(T entry)

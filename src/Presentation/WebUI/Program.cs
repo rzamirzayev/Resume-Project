@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
+using Persistence.Repositories;
+using Repositories;
 using Services;
 using Services.Implementation;
 
@@ -17,6 +19,8 @@ namespace WebUI
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
+
+            builder.Services.AddScoped<IContactPostRepository, ContactPostRepository>();
 
             builder.Services.AddScoped<IContactPostService, ContactPostService>();
 

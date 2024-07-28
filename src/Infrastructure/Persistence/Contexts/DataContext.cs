@@ -27,8 +27,6 @@ namespace Persistence.Contexts
 
         public DbSet<ContactPost> ContactPosts { get; set; }
 
-        public DbSet<Product> Products { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
