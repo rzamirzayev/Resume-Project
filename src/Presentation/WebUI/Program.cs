@@ -12,6 +12,9 @@ namespace WebUI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Host.UseServiceProviderFactory(new IoCFactory());
+
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);
@@ -20,9 +23,6 @@ namespace WebUI
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
 
-            builder.Services.AddScoped<IContactPostRepository, ContactPostRepository>();
-
-            builder.Services.AddScoped<IContactPostService, ContactPostService>();
 
             var app = builder.Build();
             app.UseStaticFiles();

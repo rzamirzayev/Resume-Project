@@ -170,6 +170,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.20, )"
