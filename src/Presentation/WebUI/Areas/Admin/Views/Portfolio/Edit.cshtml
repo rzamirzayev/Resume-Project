@@ -1,0 +1,13 @@
+﻿@model EditPortfolioPostDto
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post" style="margin-top:100px">
+    <input asp-for="Title"  />
+    <input asp-for="Desc" />
+    <input asp-for="ImagePath" />
+    <a class="btn btn-success" asp-action="index">Back</a>
+    <button class="btn btn-success">Save</button>
+</form>
+

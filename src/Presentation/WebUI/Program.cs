@@ -18,7 +18,7 @@ namespace WebUI
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);
-            builder.Services.AddDbContext<DbContext,DataContext>(cfg =>
+            builder.Services.AddDbContext<DbContext>(cfg =>
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });

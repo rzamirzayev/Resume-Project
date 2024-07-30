@@ -40,6 +40,8 @@ namespace Repositories.Common
                 query = query.Where(predicate);
             }
             var entry = await query.FirstOrDefaultAsync(cancellationToken);
+            if (entry is null)
+                throw new ArgumentNullException();
             return entry;
         }
 

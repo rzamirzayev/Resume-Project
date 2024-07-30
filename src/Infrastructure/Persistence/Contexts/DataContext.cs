@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Contexts
 {
-    public class DataContext : DbContext
+     class DataContext : DbContext
     {
         public DataContext(DbContextOptions options) : base(options) { }
 
@@ -26,6 +26,8 @@ namespace Persistence.Contexts
         public DbSet<Person> People { get; set; }
 
         public DbSet<ContactPost> ContactPosts { get; set; }
+        public DbSet<PortfolioPost> PortfolioPosts { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

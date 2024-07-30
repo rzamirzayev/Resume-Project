@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Contexts;
 using Persistence.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ namespace Persistence
         {
             base.Load(builder);
             builder.RegisterAssemblyTypes(this.GetType().Assembly).AsImplementedInterfaces().InstancePerLifetimeScope();
+            builder.RegisterType<DataContext>().As<DbContext>().InstancePerLifetimeScope();
+
         }
     }
 }

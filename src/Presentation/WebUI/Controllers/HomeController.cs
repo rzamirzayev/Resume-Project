@@ -7,11 +7,11 @@ namespace WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DataContext db;
+        //private readonly DataContext db;
         private readonly IContactPostService contactPostService;
 
-        public HomeController(DataContext db,IContactPostService contactPostService) {
-            this.db = db;
+        public HomeController(IContactPostService contactPostService) {
+            //this.db = db;
             this.contactPostService = contactPostService;
         }
         public IActionResult Index()

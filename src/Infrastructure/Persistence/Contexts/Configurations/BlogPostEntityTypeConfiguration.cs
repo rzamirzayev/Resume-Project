@@ -12,8 +12,8 @@ namespace Persistence.Contexts.Configurations
             builder.Property(b => b.Title).HasColumnType("nvarchar").HasMaxLength(200);
             builder.Property(b => b.Body).HasColumnType("nvarchar").HasMaxLength(500);
             builder.Property(b => b.ImagePath).HasColumnType("nvarchar").HasMaxLength(100);
-            builder.Property(b => b.CreatedBy).HasColumnType("int").IsRequired();
-            builder.Property(b => b.CreatedAt).HasColumnType("datetime").IsRequired();
+            builder.Property(b => b.CreatedBy).HasColumnType("int").IsRequired(false);
+            builder.Property(b => b.CreatedAt).HasColumnType("datetime").IsRequired(false);
             builder.Property(b => b.PublishedBy).HasColumnType("int");
             builder.Property(b => b.PublishedAt).HasColumnType("datetime");
             builder.Property(b => b.LastModifiedBy).HasColumnType("int");
