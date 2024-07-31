@@ -28,6 +28,10 @@ namespace WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(AddBlogPostRequestDto model)
         {
+            if (string.IsNullOrWhiteSpace(model.Text))
+            {
+
+            }
             await blogPostService.AddAsync(model);
             return RedirectToAction("Index");
         }
