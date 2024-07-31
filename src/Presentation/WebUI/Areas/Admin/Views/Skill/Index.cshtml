@@ -1,0 +1,57 @@
+﻿@model WebUI.Areas.Admin.Models.SkillViewModel
+
+@{
+    ViewData["Title"] = "Skills Management";
+}
+
+<div class="container" style="margin-top:100px">
+    <div class="page-header">
+        <!-- Sayfa başlığı ve ek bilgi buraya gelecek -->
+    </div>
+
+    <!-- Sayfa içeriği -->
+    <div class="page-body">
+        <!-- Beceri Tablosu -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Beceri Listesi</h5>
+                <span>Beceri bilgilerini görüntüleyin</span>
+            </div>
+            <div class="card-block table-border-style">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ad</th>
+                                <th>Beceri Grubu</th>
+                                <th>Beceri Türü</th>
+                                <th><a class="btn btn-success" asp-action="Create"><i class="fa fa-plus"></i> Ekle</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var skill in Model.Skills)
+                            {
+                                <tr>
+                                    <td>@skill.Name</td>
+                                    <td>
+                                        @Model.SkillGroups.FirstOrDefault(sg => sg.Id == skill.GroupId)?.Name
+                                        
+                                    </td>
+                                    <td>
+                                        @Model.SkillTypes.FirstOrDefault(st => st.Id == Model.SkillGroups.FirstOrDefault(sg => sg.Id == skill.GroupId)?.TypeId)?.Name
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@skill.Id">Düzenle</a>
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@skill.Id">Sil</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diğer Tablo veya İçerik Alanları Buraya Gelecek -->
+    </div>
+</div>

@@ -4,6 +4,7 @@ using Persistence.Repositories;
 using Repositories;
 using Services;
 using Services.Implementation;
+using Services.SkillPosts;
 
 namespace WebUI
 {
@@ -22,7 +23,6 @@ namespace WebUI
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
-
 
             var app = builder.Build();
             app.UseStaticFiles();

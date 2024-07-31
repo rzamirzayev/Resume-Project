@@ -2,8 +2,10 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Services.Implementation.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Services.Implementation.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Domain.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Services.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Domain.pdb
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Services.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\Services.Implementation.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\Services.Implementation.GeneratedMSBuildEditorConfig.editorconfig
@@ -15,5 +17,3 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\refint\Services.Implementation.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\Services.Implementation.pdb
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\obj\Debug\net7.0\ref\Services.Implementation.dll
-C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.dll
-C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Core\Services.Implementation\bin\Debug\net7.0\Repositories.pdb

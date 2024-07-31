@@ -11,8 +11,8 @@ namespace Persistence.Contexts.Configurations
 
             builder.Property(b => b.Id).HasColumnType("int");
             builder.Property(st => st.Name).HasColumnType("varchar").IsRequired().HasMaxLength(100);
-            builder.Property(st => st.CreatedBy).HasColumnType("int").IsRequired();
-            builder.Property(st => st.CreatedAt).HasColumnType("datetime").IsRequired();
+            builder.Property(st => st.CreatedBy).HasColumnType("int").IsRequired(false);
+            builder.Property(st => st.CreatedAt).HasColumnType("datetime").IsRequired(false);
             builder.Property(st => st.LastModifiedBy).HasColumnType("int");
             builder.Property(st => st.LastModifiedAt).HasColumnType("datetime");
             builder.Property(st => st.DeletedBy).HasColumnType("int");
