@@ -11,7 +11,7 @@ namespace Domain.Entities
         public int Id { get; set; }
         public required string Title { get; set; }
         public required string Desc { get; set; }
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public int? PublishedBy { get; set; }

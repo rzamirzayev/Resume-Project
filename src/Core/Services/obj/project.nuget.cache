@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sMhPbirSpiyQIoNvdtJb59wW230BXxrzygf8mZwg2BLH1nlsFEjqTNEvbo1utwbgNe628nYpMKqn9BjytQuySw==",
+  "dgSpecHash": "hRrDZDu5GvZ9OWeLqje7hnrz/IocdErrrcT+oE9WnwKjA1Ih79xnTOM5wKNHCWfbmQi0TS7m2BkaD5bE26cCKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services\\Services.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -55,6 +55,8 @@ namespace WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditPortfolioPostDto model)
         {
+            if (!ModelState.IsValid)
+                return View();
             await portfolioPostervice.EditAsync(model);
             return RedirectToAction("Index");
         }

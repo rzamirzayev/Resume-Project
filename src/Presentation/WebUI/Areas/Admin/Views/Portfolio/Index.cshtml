@@ -53,7 +53,7 @@
                                 <th>Title</th>
                                 <th>Desc</th>
                                 <th>ImagePath</th>
-                                <th><a class="btn btn-success" asp-action="create"><i class="fa fa-plus"></i></a></th>
+                                <th><a class="btn btn-success" asp-action="create">Create</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,7 +64,7 @@
                                     <td>@item.Desc</td>
                                     <td>@item.ImagePath</td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
-                                    <td><a>Delete</a> </td>
+                                    <td><a class="btn btn-warning">Delete</a> </td>
                                 </tr>
                             }
                         </tbody>

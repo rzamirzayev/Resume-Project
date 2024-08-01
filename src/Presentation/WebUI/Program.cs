@@ -5,6 +5,9 @@ using Repositories;
 using Services;
 using Services.Implementation;
 using Services.SkillPosts;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using WebUI.Filters;
 
 namespace WebUI
 {
@@ -16,13 +19,24 @@ namespace WebUI
 
             builder.Host.UseServiceProviderFactory(new IoCFactory());
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(cfg =>
+            {
+                cfg.Filters.Add(new ValidationActionFilter());
+            });
 
             builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);
             builder.Services.AddDbContext<DbContext>(cfg =>
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
+
+
+            builder.Services.AddFluentValidationAutoValidation(cfg =>
+            {
+                cfg.DisableDataAnnotationsValidation = true;
+            });
+            builder.Services.AddValidatorsFromAssemblyContaining<IServiceInterface>(includeInternalTypes: true);
+
 
             var app = builder.Build();
             app.UseStaticFiles();

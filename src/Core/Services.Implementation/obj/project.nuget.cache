@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Mr4RmHGMmR3Er6tvKDTOnXaStLNomXgmhBHUqB24Xsv9azq5D2bpUjiS03GsLDg+bGHIiDznEKHXA7b2IIdCfQ==",
+  "dgSpecHash": "/pnFSrZ9rb9bhT/4JuVrJiy9A2zYK4Renl/5iXEvGbgnZuY9JkLHa75momekq1BOrMXeO2ukodAqFMYsMnrzsA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services.Implementation\\Services.Implementation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\autofac\\8.0.0\\autofac.8.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.20\\microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.20\\microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",
