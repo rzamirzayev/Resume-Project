@@ -381,10 +381,6 @@
       "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg",
-      "PackagePath": "staticwebassets\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg"
-    },
-    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebUI.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

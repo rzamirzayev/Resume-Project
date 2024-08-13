@@ -70,7 +70,11 @@ namespace WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Remove (int id)
         {
             await portfolioPostervice.RemoveAsync(id);
-            return RedirectToAction("Index");
+            return Json(new
+            {
+                error=false,
+                message="OK"
+            });
         }
     }
 }

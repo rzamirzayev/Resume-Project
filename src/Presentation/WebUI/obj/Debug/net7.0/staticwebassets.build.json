@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "upXlsQqh9O2XQ3RLoqeuWyz8YekyNzWHV9Ku+nPrvF4=",
+  "Hash": "aABVFgmAsccmGkbtwVO6BHf2Zma1Z9lSS12iGnLtz7Q=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -1630,23 +1630,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\toastr.js\\toastr.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg",
-      "SourceId": "WebUI",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\",
-      "BasePath": "_content/WebUI",
-      "RelativePath": "uploads/3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg"
     }
   ]
 }
