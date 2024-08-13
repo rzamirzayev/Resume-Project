@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="~/css/main.css">
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/responsive.css">
+        @await RenderSectionAsync("addcss",required:false)
 
     <!-- FontsOnline -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -51,6 +52,7 @@
     <script src="~/js/vendors/bootstrap.min.js"></script>
     <script src="~/js/vendors/owl.carousel.min.js"></script>
     <script src="~/js/main.js"></script>
+        @await RenderSectionAsync("addjs",required:false)
 </body>
 
 <!-- Mirrored from new.uouapps.com/remoticv/resume(edit-mode).html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 May 2019 06:20:44 GMT -->

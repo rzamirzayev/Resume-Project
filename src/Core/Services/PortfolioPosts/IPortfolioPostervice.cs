@@ -16,5 +16,7 @@ namespace Services.PortfolioPosts
         Task<EditPortfolioPostDto> EditAsync(EditPortfolioPostDto model, CancellationToken cancellationToken = default);
 
         Task<PortfolioPostGetAllDto> GetById(int id, CancellationToken cancellationToken = default);
+
+        Task RemoveAsync(int id, CancellationToken cancellationToken=default);
     }
 }

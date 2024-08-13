@@ -76,5 +76,12 @@ namespace Services.Implementation
                     ImagePath = portfolioPost.ImagePath
                 };
             }
+
+        public async Task RemoveAsync(int id, CancellationToken cancellationToken = default)
+        {
+            var entity=await portfolioPostRepository.GetAsync(m=>m.Id==id, cancellationToken);
+            portfolioPostRepository.Remove(entity);
+            await portfolioPostRepository.SaveAsync(cancellationToken);
+        }
     }
 }

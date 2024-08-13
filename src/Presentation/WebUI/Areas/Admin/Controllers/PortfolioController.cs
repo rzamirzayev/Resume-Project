@@ -66,5 +66,11 @@ namespace WebUI.Areas.Admin.Controllers
             return View(data);
 
         }
+
+        public async Task<IActionResult> Remove (int id)
+        {
+            await portfolioPostervice.RemoveAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }

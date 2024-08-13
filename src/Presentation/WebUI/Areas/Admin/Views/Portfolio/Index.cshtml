@@ -64,7 +64,7 @@
                                     <td>@item.Desc</td>
                                     <td><img width="200" src="~/uploads/@item.ImagePath" /></td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
-                                    <td><a class="btn btn-warning">Delete</a> </td>
+                                    <td><a class="btn btn-warning" asp-action="Remove" asp-route-id="@item.Id" onclick="removeAlert(@item.Id,@item.Title)">Delete</a> </td>
                                 </tr>
                             }
                         </tbody>
@@ -74,3 +74,32 @@
         </div>
 
     </div>
+
+@section addcss{
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet"/>
+}
+ @section addjs{
+     <script src="~/lib/sweetalert2/sweetalert2.all.min.js"></script>
+     <script>
+         function removeAlert(id,name){
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    }
+                });
+         }
+
+     </script>
+ }                                 

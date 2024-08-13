@@ -337,6 +337,34 @@
       "PackagePath": "staticwebassets\\js\\vendors\\owl.carousel.min.js"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.all.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.all.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.d.ts",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.js"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\toastr.js\\toastr.css",
       "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.css"
     },
