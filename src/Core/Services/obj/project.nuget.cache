@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hRrDZDu5GvZ9OWeLqje7hnrz/IocdErrrcT+oE9WnwKjA1Ih79xnTOM5wKNHCWfbmQi0TS7m2BkaD5bE26cCKw==",
+  "dgSpecHash": "Ve2SnBHaxv9cBu4+uRIW9KiPZvLNZxkAtU8qFxqOv5333807jz2rdou0DZ51RruU0CUukGrupgIEqp+H8aJp0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Core\\Services\\Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

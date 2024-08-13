@@ -56,8 +56,7 @@ namespace WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditBlogPostDto model)
         {
-            if (!ModelState.IsValid)
-                return View();
+
             await blogPostService.EditAsync(model);
             return RedirectToAction("Index");
         }

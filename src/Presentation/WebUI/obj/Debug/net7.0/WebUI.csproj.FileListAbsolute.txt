@@ -268,3 +268,11 @@ C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\obj\Debug\net7
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\wwwroot\error-pages\404.html
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\Lenovo\Desktop\ResumeBackendFinal\src\Presentation\WebUI\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

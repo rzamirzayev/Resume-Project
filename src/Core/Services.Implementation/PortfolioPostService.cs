@@ -1,29 +1,36 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Repositories;
-using Services.BlogPosts;
 using Services.PortfolioPosts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Services.Implementation
 {
-     class PortfolioPostService : IPortfolioPostervice
+    class PortfolioPostService : IPortfolioPostervice
     {
         private readonly IPortfolioPostRepository portfolioPostRepository;
+        private readonly IHostEnvironment env;
 
-        public PortfolioPostService(IPortfolioPostRepository portfolioPostRepository)
+        public PortfolioPostService(IPortfolioPostRepository portfolioPostRepository,IHostEnvironment env)
         {
             this.portfolioPostRepository = portfolioPostRepository;
+            this.env = env;
         }
 
-        public async Task<AddPortfolioPostResponseDto> AddAsync(AddPortfolioPostResponseDto model, CancellationToken cancellationToken = default)
+        public async Task<AddPortfolioPostResponseDto> AddAsync(AddPortfolioPostRequestDto model, CancellationToken cancellationToken = default)
         {
-            var entity = new PortfolioPost { Title = model.Title, Desc = model.Desc, ImagePath = model.ImagePath };
+            var entity = new PortfolioPost { Title = model.Title, Desc = model.Desc};
+
+            var extension = Path.GetExtension(model.ImagePath.FileName);
+            entity.ImagePath = $"{Guid.NewGuid()}{extension}";
+            string fullpath = Path.Combine(env.ContentRootPath, "wwwroot", "uploads", entity.ImagePath);
+
+            using(var fs=new FileStream(fullpath, FileMode.CreateNew, FileAccess.Write))
+            {
+                await model.ImagePath.CopyToAsync(fs);
+            }
+
+
             await portfolioPostRepository.AddAsync(entity, cancellationToken);
             await portfolioPostRepository.SaveAsync(cancellationToken);
 
@@ -57,15 +64,11 @@ namespace Services.Implementation
             return data;   
         }
 
-        public async Task<EditPortfolioPostDto> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+        public async Task<PortfolioPostGetAllDto> GetById(int id, CancellationToken cancellationToken = default)
         {
                 var portfolioPost = await portfolioPostRepository.GetAsync(b => b.Id == id, cancellationToken);
-                if (portfolioPost == null)
-                {
-                    return null;
-                }
 
-                return new EditPortfolioPostDto
+                return new PortfolioPostGetAllDto
                 {
                     Id = portfolioPost.Id,
                     Title = portfolioPost.Title,

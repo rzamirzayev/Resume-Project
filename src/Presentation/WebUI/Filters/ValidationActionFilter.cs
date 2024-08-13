@@ -5,12 +5,13 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace WebUI.Filters
 {
-    public class ValidationActionFilter : IActionFilter
+    public class ValidationActionFilter : ActionFilterAttribute,IActionFilter
     {
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public override void OnActionExecuting(ActionExecutingContext context)
         {
-            if (!context.ModelState.IsValid)
+            base.OnActionExecuting(context);
+            if ( "POST".Equals(context.HttpContext.Request.Method,StringComparison.OrdinalIgnoreCase) && !context.ModelState.IsValid)
             {
                 var result = new ViewResult
                 {
@@ -22,8 +23,5 @@ namespace WebUI.Filters
             }
         }
 
-        public void OnActionExecuted(ActionExecutedContext context)
-        {
-        }
     }
 }

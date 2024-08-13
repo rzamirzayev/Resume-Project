@@ -53,6 +53,98 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error-pages\\404.html",
+      "PackagePath": "staticwebassets\\error-pages\\404.html"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\error\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\error\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\css\\overlays\\02.png",
+      "PackagePath": "staticwebassets\\error\\css\\overlays\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\css\\style.css",
+      "PackagePath": "staticwebassets\\error\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\css\\vegas.min.css",
+      "PackagePath": "staticwebassets\\error\\css\\vegas.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfont5b62.eot",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfont5b62.eot"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfont5b62.svg",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfont5b62.svg"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfont5b62.ttf",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfont5b62.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfont5b62.woff",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfont5b62.woff"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfont5b62.woff2",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfont5b62.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\fonts\\fontawesome-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\error\\fonts\\fontawesome-webfontd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\img\\background-bubble.jpg",
+      "PackagePath": "staticwebassets\\error\\img\\background-bubble.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\error\\img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\img\\image.jpg",
+      "PackagePath": "staticwebassets\\error\\img\\image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\img\\logo.png",
+      "PackagePath": "staticwebassets\\error\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\error\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\bubble.js",
+      "PackagePath": "staticwebassets\\error\\js\\bubble.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\jquery.mb.YTPlayer.js",
+      "PackagePath": "staticwebassets\\error\\js\\jquery.mb.YTPlayer.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\error\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\mozaic.js",
+      "PackagePath": "staticwebassets\\error\\js\\mozaic.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\particles.js",
+      "PackagePath": "staticwebassets\\error\\js\\particles.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\error\\js\\vegas-youtube.js",
+      "PackagePath": "staticwebassets\\error\\js\\vegas-youtube.js"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\fonts\\Simple-Line-Icons.eot",
       "PackagePath": "staticwebassets\\fonts\\Simple-Line-Icons.eot"
     },
@@ -259,6 +351,10 @@
     {
       "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\lib\\toastr.js\\toastr.min.js",
       "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3b18c4e6-616f-4556-ab4b-ac684db3d37b.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebUI.Microsoft.AspNetCore.StaticWebAssets.props",

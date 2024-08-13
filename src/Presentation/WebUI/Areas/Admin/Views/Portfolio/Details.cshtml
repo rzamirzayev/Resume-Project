@@ -1,0 +1,36 @@
+﻿@model PortfolioPostGetAllDto
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<div class="container">
+    <div method="post" style="margin-top:100px">
+        <div class="form-group">
+            <label for="exampleTitle">Title</label>
+
+            <p class="form-control">@Model.Title</p>
+
+
+        </div>
+        <div class="form-group">
+            <label for="exampleBody">Desc</label>      
+            <p class="form-control">@Model.Desc</p>
+
+
+
+        </div>
+        <div class="form-group">
+            <label for="exampleImagePatg">ImagePath</label>
+            <p class="form-control">@Model.ImagePath</p>
+
+
+
+        </div>
+        <a class="btn btn-success" asp-action="index">Back</a>
+
+
+    </div>
+</div>
+

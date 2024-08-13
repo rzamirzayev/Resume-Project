@@ -22,6 +22,7 @@ namespace WebUI
             builder.Services.AddControllersWithViews(cfg =>
             {
                 cfg.Filters.Add(new ValidationActionFilter());
+                cfg.Filters.Add(new GlobalExceptionFilter());
             });
 
             builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);

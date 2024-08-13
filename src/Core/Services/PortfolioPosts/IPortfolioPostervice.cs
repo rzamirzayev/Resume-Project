@@ -10,11 +10,11 @@ namespace Services.PortfolioPosts
     public interface IPortfolioPostervice
     {
         Task<IEnumerable<PortfolioPostGetAllDto>> GetAllAsync(CancellationToken cancellationToken = default);
-        Task<AddPortfolioPostResponseDto> AddAsync(AddPortfolioPostResponseDto model, CancellationToken
+        Task<AddPortfolioPostResponseDto> AddAsync(AddPortfolioPostRequestDto model, CancellationToken
              cancellationToken = default);
 
         Task<EditPortfolioPostDto> EditAsync(EditPortfolioPostDto model, CancellationToken cancellationToken = default);
 
-        Task<EditPortfolioPostDto> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+        Task<PortfolioPostGetAllDto> GetById(int id, CancellationToken cancellationToken = default);
     }
 }

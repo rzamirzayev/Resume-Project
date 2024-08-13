@@ -27,7 +27,7 @@ namespace WebUI.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(AddPortfolioPostResponseDto modell)
+        public async Task<IActionResult> Create([FromForm] AddPortfolioPostRequestDto modell)
         {
             await portfolioPostervice.AddAsync(modell);
             return RedirectToAction("Index");
@@ -35,7 +35,7 @@ namespace WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var portfolioPost = await portfolioPostervice.GetByIdAsync(id);
+            var portfolioPost = await portfolioPostervice.GetById(id);
 
             if (portfolioPost == null)
             {
@@ -55,10 +55,16 @@ namespace WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditPortfolioPostDto model)
         {
-            if (!ModelState.IsValid)
-                return View();
+
             await portfolioPostervice.EditAsync(model);
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var data = await portfolioPostervice.GetById(id);
+            return View(data);
+
         }
     }
 }

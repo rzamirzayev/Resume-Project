@@ -62,7 +62,7 @@
                                 <tr>
                                     <td>@item.Title</td>
                                     <td>@item.Desc</td>
-                                    <td>@item.ImagePath</td>
+                                    <td><img width="200" src="~/uploads/@item.ImagePath" /></td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
                                     <td><a class="btn btn-warning">Delete</a> </td>
                                 </tr>
