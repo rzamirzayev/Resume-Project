@@ -1,7 +1,9 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Repositories;
 using Services.BlogPosts;
+using Services.PortfolioPosts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,24 @@ namespace Services.Implementation
     class BlogPostService : IBlogPostService
     {
         private readonly IBlogPostRepository blogPostRepository;
+        private readonly IHostEnvironment env;
 
-        public BlogPostService(IBlogPostRepository blogPostRepository) 
+        public BlogPostService(IBlogPostRepository blogPostRepository, IHostEnvironment env) 
         { 
             this.blogPostRepository = blogPostRepository; 
+            this.env=env;
         }   
         public async Task<AddBlogPostResponseDto> AddAsync(AddBlogPostRequestDto model, CancellationToken cancellationToken = default)
         {
-            var entity = new BlogPost { Title=model.Title,Body=model.Body,ImagePath=model.ImagePath };
+            var entity = new BlogPost { Title=model.Title,Body=model.Body};
+            var extension = Path.GetExtension(model.ImagePath.FileName);
+            entity.ImagePath = $"{Guid.NewGuid()}{extension}";
+            string fullpath = Path.Combine(env.ContentRootPath, "wwwroot", "uploads", entity.ImagePath);
+
+            using (var fs = new FileStream(fullpath, FileMode.CreateNew, FileAccess.Write))
+            {
+                await model.ImagePath.CopyToAsync(fs);
+            }
             await blogPostRepository.AddAsync(entity, cancellationToken);
             await blogPostRepository.SaveAsync(cancellationToken);
 
@@ -75,6 +87,11 @@ namespace Services.Implementation
             };
         }
 
-
+        public async Task RemoveAsync(int id, CancellationToken cancellationToken = default)
+        {
+            var entity = await blogPostRepository.GetAsync(m => m.Id == id, cancellationToken);
+            blogPostRepository.Remove(entity);
+            await blogPostRepository.SaveAsync(cancellationToken);
+        }
     }
 }

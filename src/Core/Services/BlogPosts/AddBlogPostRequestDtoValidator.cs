@@ -21,11 +21,11 @@ namespace Services.BlogPosts
                 .WithMessage("Body bos ola bilmez")
                 .MinimumLength(10)
                 .WithMessage("Text en az 10 simvoldan ibaret olmalidir");
-            RuleFor(m => m.ImagePath)
-                 .NotNull()
-                 .WithMessage("ImagePath bos ola bilmez")
-                 .MinimumLength(10)
-                 .WithMessage("ImagePath en az 10 simvoldan ibaret olmalidir");
+            //RuleFor(m => m.ImagePath)
+            //     .NotNull()
+            //     .WithMessage("ImagePath bos ola bilmez")
+            //     .MinimumLength(10)
+            //     .WithMessage("ImagePath en az 10 simvoldan ibaret olmalidir");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Services.BlogPosts
     {
         public required string Title { get; set; }
         public required string Body { get; set; }
-        public required string ImagePath { get; set; }
+        public required IFormFile ImagePath { get; set; }
         
     }
     public class AddBlogPostResponseDto

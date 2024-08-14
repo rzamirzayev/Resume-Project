@@ -62,9 +62,10 @@
                                 <tr>
                                     <td>@item.Title</td>
                                     <td>@item.Body</td>
-                                    <td>@item.ImagePath</td>
+                                    <td><img width="200" src="~/uploads/@item.ImagePath" /></td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
-                                    <td><a class="btn btn-warning">Delete</a> </td>
+                                    <td><a class="btn btn-warning" asp-action="Remove" asp-route-id="@item.Id" onclick="removeEntity(this,'@item.Title');return false;">Delete</a> </td>
+
                                 </tr>
                             }
                         </tbody>
@@ -74,3 +75,39 @@
         </div>
 
 </div>
+    @section addcss{
+        <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    }
+    @section addjs{
+        <script src="~/lib/sweetalert2/sweetalert2.all.min.js"></script>
+        <script>
+
+            function removeEntity(element, name) {
+                Swal.fire({
+                    title: `${name}, silmək istədiyinizdən əminsiniz?`,
+                    text: "Silindikdən sonra geri dondere bilmiyessiz!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Bəli!",
+                    cancelButtonText: "Xeyr"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let href = element.getAttribute('href');
+
+
+                        fetch(href, {
+                            method: 'post'
+                        }).then(response => response.json())
+                            .then(response => {
+                                window.location.reload();
+                            })
+                            .catch(err => console.log(err));
+                    }
+                });
+            }
+
+
+        </script>
+    }

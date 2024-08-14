@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services.BlogPosts;
+using Services.PortfolioPosts;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -26,7 +27,7 @@ namespace WebUI.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(AddBlogPostRequestDto model)
+        public async Task<IActionResult> Create([FromForm] AddBlogPostRequestDto model)
         {
 
             await blogPostService.AddAsync(model);
@@ -59,6 +60,16 @@ namespace WebUI.Areas.Admin.Controllers
 
             await blogPostService.EditAsync(model);
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            await blogPostService.RemoveAsync(id);
+            return Json(new
+            {
+                error = false,
+                message = "OK"
+            });
         }
 
     }

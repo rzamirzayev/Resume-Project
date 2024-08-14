@@ -16,5 +16,8 @@ namespace Services.BlogPosts
         Task<EditBlogPostDto> EditAsync(EditBlogPostDto model,CancellationToken cancellationToken=default);
 
         Task<EditBlogPostDto> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+
+        Task RemoveAsync(int id, CancellationToken cancellationToken = default);
+
     }
 }
