@@ -1,10 +1,12 @@
 ﻿using Domain;
 using Domain.Entities;
+using Domain.Entities.Membership;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Contexts
 {
-     class DataContext : DbContext
+     class DataContext : IdentityDbContext<ResumeUser,ResumeRole,int,ResumeUserClaim,ResumeUserRole,ResumeUserLogin,ResumeRoleClaim,ResumeUserToken>
     {
         public DataContext(DbContextOptions options) : base(options) { }
 
@@ -12,7 +14,7 @@ namespace Persistence.Contexts
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Project> Projects { get; set; }
-
+         
         public DbSet<BlogPost> BlogPosts { get; set; }
 
         public DbSet<SkillGroup> SkillGroups { get; set; }

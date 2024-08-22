@@ -158,7 +158,7 @@
                         <div class="inside-sec">
                             <!-- BIO AND SKILLS -->
                             <h5 class="tittle">Bio & Skills</h5>
-                            <form method="post">
+                       @*     <form method="post">
                                 <div class="bio-info padding-30">
                                     <textarea class="form-control" placeholder="Write your description here"></textarea>
                                     <div class="skills margin-top-50">
@@ -223,7 +223,82 @@
                                         <a href="#" class="btn"><i class="fa fa-plus"></i> Add Skill</a>
                                     </div>
                                 </div>
+                            </form>*@
+
+                            <form method="post" asp-controller="Skill" asp-action="CreateSkill">
+                                <div class="bio-info padding-30">
+                                    <!-- Skill Description -->
+                                    <textarea name="description" class="form-control" placeholder="Write your description here"></textarea>
+
+                                    <div class="skills margin-top-50">
+                                        <!-- SKILLS -->
+                                        <h6>Add A Skill</h6>
+
+                                        <!-- Sound Engineering -->
+                                        <div class="row">
+                                            <!-- Categories -->
+                                            <div class="col-sm-6">
+                                                <select name="skillGroupId" class="selectpicker form-control" required>
+                                                    <option value="">Select Category</option>
+                                                    <option value="1">Web Design</option>
+                                                    <option value="2">Development</option>
+                                                    <!-- Daha fazla seçenek ekleyebilirsiniz -->
+                                                </select>
+                                                <span class="add-custm">or <a href="#."> Add A Custom Category</a></span>
+                                            </div>
+
+                                            <!-- Skills -->
+                                            <div class="col-sm-6">
+                                                <select name="skillGroupTypeId" class="selectpicker form-control" required>
+                                                    <option value="">Select Skill Type</option>
+                                                    <option value="1">HTML5 CSS3</option>
+                                                    <option value="2">Photoshop</option>
+                                                    <!-- Daha fazla seçenek ekleyebilirsiniz -->
+                                                </select>
+                                                <span class="add-custm">or <a href="#."> Add A Custom Skills</a></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Display Type -->
+                                        <div class="disply-type">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="radio radio-inline">
+                                                        <input type="radio" id="inlineRadio1" value="Bar" name="displayType">
+                                                        <label for="inlineRadio1"> Display As Bar </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="radio radio-inline">
+                                                        <input type="radio" id="inlineRadio2" value="Tag" name="displayType">
+                                                        <label for="inlineRadio2"> Display As Tag </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Skill Info -->
+                                        <div class="skill-type-info">
+                                            <label>
+                                                Skill Level
+                                                <input type="text" name="skillLevel" class="form-control" placeholder="0" />
+                                            </label>
+                                            <label>
+                                                Skill Description
+                                                <textarea name="skillDescription" class="form-control" placeholder=""></textarea>
+                                            </label>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <button type="submit" class="btn"><i class="fa fa-plus"></i> Add Skill</button>
+                                    </div>
+                                </div>
                             </form>
+
+
+
+                   
+                  
 
                         </div>
 

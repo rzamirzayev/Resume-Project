@@ -3,7 +3,7 @@
     ViewData["Title"] = "Create";
 }
 <div class="container">
-    <form method="post" style="margin-top:100px" enctype="multipart/form-data">
+    <form method="post" asp-action="create" asp-controller="blog" style="margin-top:100px" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleTitle">Title</label>
             <input type="text" class="form-control" id="exampleTitle" aria-describedby="TitleHelp" placeholder="Enter Title" asp-for="Title">
@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label asp-for="ImagePath">ImagePath</label>
-            <input type="file" class="form-control" id="ImagePath" placeholder="ImagePath" asp-for="ImagePath">
+            <input type="file" class="form-control" id="ImagePath" placeholder="ImagePath" accept="image/*" asp-for="ImagePath">
             <span asp-validation-for="ImagePath" class="text text-danger"></span>
 
         </div>

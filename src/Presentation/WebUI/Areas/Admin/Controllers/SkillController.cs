@@ -54,5 +54,38 @@ namespace WebUI.Areas.Admin.Controllers
 
             return View(skillViewModel);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateSkill(
+    string skillName,
+    int skillGroupId,
+    string skillGroupName,
+    int skillGroupTypeId,
+    string skillTypeName)
+        {
+     
+            var skillType = await _skillTypeService.GetByIdAsync(skillGroupTypeId);
+            if (skillType == null)
+            {
+            
+                var skillTypeDto = new AddSkillTypeRequestDto { Name = skillTypeName };
+                await _skillTypeService.AddAsync(skillTypeDto);
+            }
+
+      
+            var skillGroup = await _skillGroupService.GetByIdAsync(skillGroupId);
+            if (skillGroup == null)
+            {
+      
+                var skillGroupDto = new AddSkillGroupRequestDto { Name = skillGroupName, TypeId = skillGroupTypeId };
+                await _skillGroupService.AddAsync(skillGroupDto);
+            }
+
+            var skillDto = new AddSkillPostRequestDto { Name = skillName, GroupId = skillGroupId };
+            await _skillPostService.AddAsync(skillDto);
+
+
+            return RedirectToAction("Index");
+        }
     }
 }
