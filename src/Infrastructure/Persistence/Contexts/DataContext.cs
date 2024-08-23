@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Contexts
 {
-     class DataContext : IdentityDbContext<ResumeUser,ResumeRole,int,ResumeUserClaim,ResumeUserRole,ResumeUserLogin,ResumeRoleClaim,ResumeUserToken>
+      class DataContext : IdentityDbContext<ResumeUser,ResumeRole,int,ResumeUserClaim,ResumeUserRole,ResumeUserLogin,ResumeRoleClaim,ResumeUserToken>
     {
         public DataContext(DbContextOptions options) : base(options) { }
 

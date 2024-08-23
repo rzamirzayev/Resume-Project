@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+<h2>Register</h2>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <label>Email:</label>
+    <input name="email" type="text" placeholder="email "/><br />
+    <label>Pasword:</label>
+    <input name="password" type="text" placeholder="password"/><br/>
+    <button type="submit">Register</button>
+</form>
