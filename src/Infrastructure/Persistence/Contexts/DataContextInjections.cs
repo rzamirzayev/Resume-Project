@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Membership;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +26,7 @@ namespace Persistence.Contexts
                 .AddSignInManager<SignInManager<ResumeUser>>()
                 .AddRoleManager<RoleManager<ResumeRole>>();
 
+           
             return services;
         }
     }

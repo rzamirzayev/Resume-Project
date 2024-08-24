@@ -76,30 +76,42 @@ namespace WebUI
 
             });
 
-            builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, cfg =>
-            {
-                cfg.LoginPath = "/signin.html";
-                cfg.Cookie.Name = "resume";
-                cfg.Cookie.HttpOnly = true;
-            });
-            //builder.Services.AddAuthentication(cfg => {
-
-            //    cfg.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultForbidScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    cfg.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-
-            //}).AddCookie(cfg =>
+            //builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme).AddCookie(IdentityConstants.ApplicationScheme, cfg =>
             //{
             //    cfg.LoginPath = "/signin.html";
-
-            //    cfg.Cookie.Name = "ogani";
+            //    cfg.AccessDeniedPath= "/accessdenied.html"; 
+            //    cfg.Cookie.Name = "resume";
             //    cfg.Cookie.HttpOnly = true;
             //});
-            builder.Services.AddAuthorization();
+            builder.Services.AddAuthentication(cfg =>
+            {
+                cfg.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                cfg.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                cfg.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                cfg.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                cfg.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(cfg =>
+            {
+                cfg.LoginPath = "/signin.html";
+                cfg.AccessDeniedPath = "/accessdenied.html";
+                cfg.Cookie.Name = "ogani";
+                cfg.Cookie.HttpOnly = true;
+            });
+
+
+
+            builder.Services.AddAuthorization(cfg =>
+            {
+                    cfg.AddPolicy("admin.blog.get", opt =>
+                    {
+                        opt.RequireAssertion(hendler =>
+                        {
+
+                            return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.get", "1");
+                        });
+                    });
+            });
 
             var app = builder.Build();
 
@@ -107,6 +119,13 @@ namespace WebUI
             app.UseAuthorization();
 
             app.UseStaticFiles();
+            app.MapGet("/accessdenied.html", async (context) =>
+            {
+                context.Response.Clear();
+                context.Response.ContentType = "text/html";
+                context.Response.StatusCode = 200;
+                await context.Response.WriteAsync(File.ReadAllText("wwwroot/error-pages/404.html"));
+            });
             app.MapControllerRoute(name: "areas", pattern: "{area:exists}/{controller=dashboard}/{action=index}/{id?}");
             app.MapControllerRoute(name:"default",pattern:"{controller=home}/{action=index}/{id?}");
          

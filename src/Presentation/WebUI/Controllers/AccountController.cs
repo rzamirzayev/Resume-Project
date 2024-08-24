@@ -1,7 +1,10 @@
 ﻿using Domain.Entities.Membership;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace WebUI.Controllers
 {
@@ -67,7 +70,22 @@ namespace WebUI.Controllers
                 goto l1;
             }
 
-            await signInManager.SignInAsync(user,true);
+            //await signInManager.SignInAsync(user,true);
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString())
+            };
+            var now=DateTime.UtcNow;
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            var properties = new AuthenticationProperties
+            {
+                IsPersistent= true,
+                IssuedUtc= now,
+                ExpiresUtc= now.AddMinutes(10)
+            };
+            await Request.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal,properties);
+
             var callbackUrl = Request.Query["ReturnUrl"];
             if (!string.IsNullOrWhiteSpace(callbackUrl))
             {

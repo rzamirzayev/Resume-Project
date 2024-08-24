@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.BlogPosts;
 using Services.PortfolioPosts;
 
@@ -12,6 +13,7 @@ namespace WebUI.Areas.Admin.Controllers
         public BlogController(IBlogPostService blogPostService) {
             this.blogPostService = blogPostService;
         }
+        [Authorize(Policy = "admin.blog.get")]
         public async Task<IActionResult> Index()
         {
             var data = await blogPostService.GetAllAsync();
@@ -19,7 +21,7 @@ namespace WebUI.Areas.Admin.Controllers
 
         }
 
-
+        [Authorize(Policy="admin.blog.create")]
         public IActionResult Create()
         {
             return View();
@@ -27,6 +29,9 @@ namespace WebUI.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Policy = "admin.blog.create")]
+
+
         public async Task<IActionResult> Create([FromForm] AddBlogPostRequestDto model)
         {
 
@@ -34,7 +39,7 @@ namespace WebUI.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Policy = "admin.blog.edit")]
         public async Task<IActionResult> Edit(int id)
         {
             var blogPost = await blogPostService.GetByIdAsync(id);
@@ -54,6 +59,7 @@ namespace WebUI.Areas.Admin.Controllers
 
             return View(model);
         }
+        [Authorize(Policy = "admin.blog.edit")]
         [HttpPost]
         public async Task<IActionResult> Edit(EditBlogPostDto model)
         {
@@ -61,6 +67,7 @@ namespace WebUI.Areas.Admin.Controllers
             await blogPostService.EditAsync(model);
             return RedirectToAction("Index");
         }
+        [Authorize(Policy= "admin.blog.remove")]
 
         public async Task<IActionResult> Remove(int id)
         {

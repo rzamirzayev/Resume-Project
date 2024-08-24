@@ -28,9 +28,7 @@ namespace Services.Implementation.Registration
                .AsImplementedInterfaces()
                .InstancePerLifetimeScope();
 
-            //builder.RegisterType(typeof(UserManager<ResumeUser>)).AsSelf().InstancePerLifetimeScope();
-            //builder.RegisterType(typeof(SignInManager<ResumeUser>)).AsSelf().InstancePerLifetimeScope();
-            //builder.RegisterType(typeof(RoleManager<ResumeRole>)).AsSelf().InstancePerLifetimeScope();
+
 
         }
     }
