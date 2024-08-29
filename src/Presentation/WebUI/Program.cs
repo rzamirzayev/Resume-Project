@@ -14,13 +14,18 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
+using Domain.Configurations;
 
 namespace WebUI
 {
     public class Program
     {
+        static string[] policies = null;
         public static void Main(string[] args)
         {
+            LoadPolicies();
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Host.UseServiceProviderFactory(new IoCFactory());
@@ -45,7 +50,9 @@ namespace WebUI
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"));
             });
-
+            builder.Services.Configure<EmailConfiguration>(cfg => builder.Configuration.GetSection(cfg.GetType().Name).Bind(cfg));
+            builder.Services.Configure<CryptoServiceConfiguration>(cfg => builder.Configuration.GetSection(cfg.GetType().Name).Bind(cfg));
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddFluentValidationAutoValidation(cfg =>
             {
                 cfg.DisableDataAnnotationsValidation = true;
@@ -103,6 +110,7 @@ namespace WebUI
 
             builder.Services.AddAuthorization(cfg =>
             {
+                string[] policie = new[] { "admin.blog.get", "admin.blog.create" };
                     cfg.AddPolicy("admin.blog.get", opt =>
                     {
                         opt.RequireAssertion(hendler =>
@@ -131,6 +139,28 @@ namespace WebUI
          
 
             app.Run();
+        }
+
+        private static void LoadPolicies()
+        {
+            var types = typeof(Program).Assembly.GetTypes();
+
+            policies = types
+                .Where(t => typeof(ControllerBase).IsAssignableFrom(t) && t.IsDefined(typeof(AuthorizeAttribute), true))
+                .SelectMany(t => t.GetCustomAttributes<AuthorizeAttribute>())
+                .Union(
+                types
+                .Where(t => typeof(ControllerBase).IsAssignableFrom(t))
+                .SelectMany(type => type.GetMethods())
+                .Where(method => method.IsPublic
+                 && !method.IsDefined(typeof(NonActionAttribute), true)
+                 && method.IsDefined(typeof(AuthorizeAttribute), true))
+                 .SelectMany(t => t.GetCustomAttributes<AuthorizeAttribute>())
+                )
+                .Where(a => !string.IsNullOrWhiteSpace(a.Policy))
+                .SelectMany(a => a.Policy.Split(new[] { "," }, System.StringSplitOptions.RemoveEmptyEntries))
+                .Distinct()
+                .ToArray();
         }
     }
 }

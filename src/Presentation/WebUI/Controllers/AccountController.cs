@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Services.Common;
 using System.Security.Claims;
 
 namespace WebUI.Controllers
@@ -13,10 +14,12 @@ namespace WebUI.Controllers
     {
         private readonly UserManager<ResumeUser> userManager;
         private readonly SignInManager<ResumeUser> signInManager;
+        private readonly IEmailService emailService;
 
-        public AccountController(UserManager<ResumeUser> userManager,SignInManager<ResumeUser> signInManager) {
+        public AccountController(UserManager<ResumeUser> userManager,SignInManager<ResumeUser> signInManager,IEmailService emailService) {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.emailService = emailService;
                 }
         public IActionResult Register()
         {
@@ -40,6 +43,13 @@ namespace WebUI.Controllers
                 }
                 return View();
             }
+            var token= await userManager.GenerateEmailConfirmationTokenAsync(user);
+
+            string link = $"{Request.Scheme}://{Request.Host}/approve-account?token={token}";
+
+            string message = $"Hesabi tesdiq etmek ucun <a href=\"{link}\">link</a>'le davem edin";
+
+            await emailService.SendEmail(email, "Approve Registration", message);
             return RedirectToAction("Index","Home");
         }
 
@@ -69,6 +79,11 @@ namespace WebUI.Controllers
                 ModelState.AddModelError("User", "username or password incorrect!");
                 goto l1;
             }
+            if (!user.EmailConfirmed)
+            {
+                ModelState.AddModelError("User", "Email not confirmed");
+                goto l1;
+            }
 
             //await signInManager.SignInAsync(user,true);
             var claims = new List<Claim>
@@ -95,6 +110,17 @@ namespace WebUI.Controllers
             return RedirectToAction("Index", "Home");
         l1:
             return View();
+        }
+
+
+        [Route("/approve-account")]
+        public async Task<IActionResult> RegisterConfirm(string token)
+        {
+            var user = await userManager.FindByEmailAsync("rza.mirzeyev12@gmail.com");
+
+            await userManager.ConfirmEmailAsync(user, token);
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
