@@ -38,7 +38,7 @@ namespace WebUI.Controllers
             {
                 error = false,
                 message = responseMessage
-            }); ;
+            }); 
         }
 
         public IActionResult Resume()

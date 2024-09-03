@@ -1,4 +1,4 @@
-﻿
+﻿@model Services.BlogPosts.EditBlogPostDto
 @{
     ViewData["Title"] = "Details";
 }
@@ -10,12 +10,12 @@
     <!-- Blog -->
     <article class="blog-post width-100 padding-25">
         <div class="post-img">
-            <img src="images/img-1.jpg" alt="">
+            <img src="~/uploads/@Model.ImagePath" alt="">
             <span class="date-in">27 JAN</span>
         </div>
 
         <!-- BLOG DETAIL -->
-        <h4 class="font-normal">Faster Response</h4>
+        <h4 class="font-normal">@Model.Title</h4>
         <span class="post-bt">by <span class="text-color-primary">Admin</span></span>
         <ul class="post-info">
             <li> <i class="fa fa-comments-o"></i>97 </li>
@@ -24,133 +24,15 @@
             <li>  </li>
         </ul>
         <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.<br>
-            <br>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+            @Model.Body
         </p>
-        <blockquote class="margin-top-30">“Sensibus oportere signiferumque id mea. At usu lucilius phaedrum, vix oratio epicurei ne. Eripuit conceptam sea cu, ius minim delectus euripidis cu. Probo nonumy gubergren id nec. In est probo ridens, his laoreet euripidis et.”</blockquote>
-        <h5 class="margin-top-30 margin-bottom-0">1914 translation by H. Rackham</h5>
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
-        <div class="row">
-            <div class="col-md-6">
-                <p>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, literature, discovered the undoubtable source. <br>
-                    <br>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words
-                </p>
-            </div>
-            <div class="col-md-6"><img class="img-responsive margin-top-10" src="images/post-img.jpg" alt=""></div>
-        </div>
-        <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.<br>
-            <br>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
-        </p>
-        <div class="auther-name text-center margin-top-50">
-            <h6 class="font-12px margin-top-20 margin-bottom-10">WHITE SHADOW WALKER</h6>
-            <span class="font-16px font-crimson font-italic">Writer/Personal blog</span>
-        </div>
+       
 
 
 
-        <div class="next-prev">
-            <div class="row">
-                <div class="col-md-6 text-left"><a href="#." class="font-16px font-crimson text-uppercase"><i class="fa fa-long-arrow-left margin-right-15"></i> PREVIOUS Article</a></div>
-                <div class="col-md-6 text-right"><a href="#." class="font-16px font-crimson text-uppercase">Next Article<i class="fa fa-long-arrow-right margin-left-15"></i></a></div>
-            </div>
-        </div>
 
 
-        <div class="comments">
-
-            <!-- Main Heading -->
-            <div class="heading-side-bar margin-bottom-50 margin-top-100">
-                <h4>Comment (37)</h4>
-            </div>
-            <ul>
-
-                <!-- Comments -->
-                <li class="margin-bottom-30">
-                    <div class="media">
-                        <div class="media-left">
-                            <div class="avatar"><img src="images/avatar-1.jpg" alt=""></div>
-                        </div>
-                        <div class="media-body">
-                            <div class="a-com">
-                                <span class="a-name text-color-primary">JAMMIE LANDING </span><span class="date">24.03.2015 at 10:21</span>
-                                <p class="margin-top-20">
-                                    “Quando feugait duo ei, te erant corpora interpretaris eos. Illud accommodare vituperatoribus an mea. Erat mazim animal
-                                    at nam, eam te doctus evertitur, sed decore ornatus”
-                                </p>
-                                <a href="#." class="text-right"> REPLAY <i class="fa fa-reply"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Comments Replay -->
-                <li class="com-reply">
-                    <div class="media">
-                        <div class="media-left">
-                            <div class="avatar"><img src="images/avatar-2.jpg" alt=""></div>
-                        </div>
-                        <div class="media-body">
-                            <div class="a-com">
-                                <span class="a-name ">JAMMIE LANDING </span><span class="date">24.03.2015 at 10:21</span>
-                                <p class="margin-top-20">
-                                    “Quando feugait duo ei, te erant corpora interpretaris eos. Illud accommodare vituperatoribus an mea. Erat mazim animal
-                                    at nam, eam te doctus evertitur, sed decore ornatus”
-                                </p>
-                                <a href="#." class="text-right"> REPLAY <i class="fa fa-reply"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-center more-comments"><a href="#.">MORE COMMENT <i class="fa fa-angle-down"></i></a></li>
-            </ul>
-
-            <!-- Comments Form -->
-            <div class="comment-form">
-                <!-- Main Heading -->
-                <div class="heading-side-bar margin-bottom-50 margin-top-80">
-                    <h4>Post to Reply</h4>
-                </div>
-                <form>
-                    <ul class="row">
-                        <li class="col-sm-4">
-                            <label>
-                                *NAME
-                                <input class="form-control" type="text" placeholder="">
-                            </label>
-                        </li>
-                        <li class="col-sm-4">
-                            <label>
-                                *EMAIL ADDRESS
-                                <input class="form-control" type="text" placeholder="">
-                            </label>
-                        </li>
-                        <li class="col-sm-4">
-                            <label>
-                                WEBSITE
-                                <input class="form-control" type="text" placeholder="">
-                            </label>
-                        </li>
-                        <li class="col-sm-12">
-                            <label>
-                                SUBJECT
-                                <input class="form-control" type="text" placeholder="">
-                            </label>
-                        </li>
-                        <li class="col-sm-12">
-                            <textarea placeholder="YOUR MESSAGE"></textarea>
-                        </li>
-                        <li class="col-sm-12">
-                            <button type="submit" class="btn btn-dark">POST COMMENT </button>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </div>
+       
 
 
     </article>

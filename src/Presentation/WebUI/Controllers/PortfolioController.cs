@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Services.PortfolioPosts;
 
 namespace WebUI.Controllers
 {
@@ -7,9 +8,15 @@ namespace WebUI.Controllers
 
     public class PortfolioController : Controller
     {
-        public IActionResult Index()
+        private readonly IPortfolioPostervice portfolioPostervice;
+
+        public PortfolioController(IPortfolioPostervice portfolioPostervice) {
+            this.portfolioPostervice = portfolioPostervice;
+        }
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var data = await portfolioPostervice.GetAllAsync();
+            return View(data);
         }
     }
 }

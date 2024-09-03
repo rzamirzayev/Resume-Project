@@ -100,6 +100,9 @@
 
                         fetch(href, {
                             method: 'post'
+                            headers:{
+                                'X-Requested-With':'XMLHttpRequest'
+                            }
                         }).then(response => response.json())
                             .then(response => {
                                 window.location.reload();

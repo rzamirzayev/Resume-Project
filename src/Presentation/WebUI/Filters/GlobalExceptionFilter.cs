@@ -8,7 +8,8 @@ namespace WebUI.Filters
         public void OnException(ExceptionContext context)
         {
             context.ExceptionHandled = true;
-
+            GenerateHttpResponse(context);
+            GenerateAjaxResponse(context);
             Exception ex = context.Exception;
             while (ex.InnerException != null)
             {
@@ -16,6 +17,33 @@ namespace WebUI.Filters
             }
             Console.WriteLine(ex.Message);
 
+            if ("XMLHttpRequest".Equals(context.HttpContext.Request.Headers["X-Requested-With"]))
+            {
+                GenerateAjaxResponse(context);
+                return;
+            }
+            GenerateHttpResponse(context);
+
+            
+        }
+
+        private void GenerateAjaxResponse(ExceptionContext context)
+        {
+            switch (context.Exception)
+            {
+                case NullReferenceException:
+                case ArgumentNullException:
+                    context.Result = new JsonResult(new
+                    {
+                        error = true,
+                        message=context.Exception.Message
+                    }); ;
+                    break;
+            }
+        }
+
+        private void GenerateHttpResponse(ExceptionContext context)
+        {
             switch (context.Exception)
             {
                 case NullReferenceException:

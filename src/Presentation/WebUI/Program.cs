@@ -119,6 +119,13 @@ namespace WebUI
                             return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.get", "1");
                         });
                     });
+                cfg.AddPolicy("admin.blog.create", opt =>
+                {
+                    opt.RequireAssertion(hendler =>
+                    {
+                        return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.create", "1");
+                    });
+                });
             });
 
             var app = builder.Build();

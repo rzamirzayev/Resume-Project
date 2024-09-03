@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Services.BlogPosts;
 
 namespace WebUI.Controllers
 {
@@ -7,13 +8,19 @@ namespace WebUI.Controllers
 
     public class BlogController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
+        private readonly IBlogPostService blogPostService;
+        public BlogController(IBlogPostService blogPostService) {
+            this.blogPostService = blogPostService;
         }
-        public IActionResult Details(int id)
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var data = await blogPostService.GetAllAsync();
+            return View(data);
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var entity=await blogPostService.GetByIdAsync(id);
+            return View(entity);
         }
     }
 }
