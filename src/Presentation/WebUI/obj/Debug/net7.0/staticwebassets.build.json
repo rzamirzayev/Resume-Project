@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bxpKNuQfUHVXZLO3poVYodIquXINqVVd9fdam0PiUr0=",
+  "Hash": "TEOK7dBuwqx4UwbhL1YusmG5dZmRDK5wW4DDZNpPb6Q=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -3653,6 +3653,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\48926359-6794-4871-9af4-921f1931e62c.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\uploads\\7eb93f3a-3520-4ee3-8201-66d5950ed4b2.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "uploads/7eb93f3a-3520-4ee3-8201-66d5950ed4b2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\7eb93f3a-3520-4ee3-8201-66d5950ed4b2.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\ResumeBackendFinal\\src\\Presentation\\WebUI\\wwwroot\\uploads\\b0834cf5-6e93-43d4-9ff9-2b357f4508e6.jpg",

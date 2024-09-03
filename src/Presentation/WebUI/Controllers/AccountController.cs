@@ -45,7 +45,8 @@ namespace WebUI.Controllers
             }
             var token= await userManager.GenerateEmailConfirmationTokenAsync(user);
 
-            string link = $"{Request.Scheme}://{Request.Host}/approve-account?token={token}";
+            //string link = $"{Request.Scheme}://{Request.Host}/approve-account?token={token}";
+            string link = $"{Request.Scheme}://{Request.Host}/approve-account?email={email}&token={token}";
 
             string message = $"Hesabi tesdiq etmek ucun <a href=\"{link}\">link</a>'le davem edin";
 
@@ -114,11 +115,18 @@ namespace WebUI.Controllers
 
 
         [Route("/approve-account")]
-        public async Task<IActionResult> RegisterConfirm(string token)
+        public async Task<IActionResult> RegisterConfirm(string email,string token)
         {
-            var user = await userManager.FindByEmailAsync("rza.mirzeyev12@gmail.com");
+            var user = await userManager.FindByEmailAsync(email);
 
-            await userManager.ConfirmEmailAsync(user, token);
+            var result=await userManager.ConfirmEmailAsync(user, token);
+            if (!result.Succeeded)
+            {
+                // Hata mesajlarını ele alın
+                var errors = result.Errors.Select(e => e.Description).ToList();
+                Console.WriteLine(errors);
+            }
+
 
             return RedirectToAction("Index", "Home");
         }
