@@ -647,6 +647,13 @@ namespace Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
+                    b.Property<string>("SkillDesc")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar");
+
+                    b.Property<int?>("SkillLevel")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GroupId");

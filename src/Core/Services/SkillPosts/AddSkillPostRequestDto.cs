@@ -9,12 +9,16 @@ namespace Services.SkillPosts
     public class AddSkillPostRequestDto
     {
         public required string Name { get; set; }
+        public string Description { get; set; }
+        public int SkillLevel { get; set; }
         public int GroupId { get; set; }
     }
     public class AddSkillPostResponseDto
     {
         public int Id { get; set; }
         public required string Name { get; set; }
+        public string Description { get; set; }
+        public int SkillLevel { get; set; }
         public int GroupId { get; set; }
     }
     

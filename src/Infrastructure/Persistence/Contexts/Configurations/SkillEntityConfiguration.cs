@@ -17,6 +17,8 @@ namespace Persistence.Contexts.Configurations
             builder.Property(s => s.LastModifiedAt).HasColumnType("datetime");
             builder.Property(s => s.DeletedBy).HasColumnType("int");
             builder.Property(s => s.DeletedAt).HasColumnType("datetime");
+            builder.Property(s=>s.SkillLevel).HasColumnType("int").IsRequired(false);
+            builder.Property(s => s.SkillDesc).HasColumnType("nvarchar").HasMaxLength(100);
 
             builder.ToTable("Skills");
             builder.HasKey(s => s.Id);

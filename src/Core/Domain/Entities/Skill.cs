@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using System.Globalization;
+
+namespace Domain.Entities
 {
     public class Skill
     {
@@ -11,7 +13,8 @@
         public DateTime? LastModifiedAt { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedAt { get; set; }
-
+        public int? SkillLevel { get; set; }
+        public string? SkillDesc { get; set; }
         public SkillGroup Group { get; set; }
     }
 }
