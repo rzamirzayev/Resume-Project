@@ -6,6 +6,6 @@ namespace WebUI.Areas.Admin.Models
     {
         public SkillViewModel SkillViewModel { get; set; }
 
-        public AddSkillPostResponseDto skillPostResponseDto { get; set; }
+        public AddSkillPostRequestDto SkillPostRequestDto { get; set; }
     }
 }

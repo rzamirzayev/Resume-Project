@@ -172,22 +172,25 @@
 
                                             <!-- Categories -->
                                             <div class="col-sm-6">
-                                                <select class="form-control" id="skillGroupSelect" asp-for="skillPostResponseDto.GroupId">
+                                                <select class="form-control" id="skillGroupSelect" asp-for="SkillPostRequestDto.GroupId">
                                                     <option value="">Select Skill Group</option>
                                                     @foreach(var group in Model.SkillViewModel.SkillGroups)
                                                     {
                                                         <option value="@group.Id">@group.Name</option>
                                                     }
                                                 </select>
-                                                <span class="add-custm">or <a href="#."> Add A Custom Category</a></span>
                                             </div>
 
                                             <div class="col-sm-6">
-                                                <select id="skillSelect" class="form-control" asp-for="skillPostResponseDto.Name">
+                                                <select id="skillSelect" class="form-control" asp-for="SkillPostRequestDto.Name">
                                                     <option value="">Select Skill</option>
                                                 </select>
-                                                <span class="add-custm">or <a href="#."> Add A Custom Skills</a></span>
+                                                <span class="add-custm">or <a href="#" id="addCustomSkill"> Add A Custom Skills</a></span>
                                             </div>
+                                        </div>
+                                        <div id="customSkillInput" style="display: none;">
+                                            <input type="text" id="newCustomSkill"class="form-control" placeholder="Enter custom skill">
+                                            <button class="btn btn-success" type="button" id="addSkillButton">Add Skill</button>
                                         </div>
 
                                         <!-- Disply Type -->
@@ -212,8 +215,7 @@
                                         <div class="skill-type-info">
                                             <label>
                                                 Skill Level
-                                                @*<input type="text" class="form-control" placeholder="0">*@
-                                                <select class="form-control" asp-for="skillPostResponseDto.SkillLevel">
+                                                <select class="form-control" asp-for="SkillPostRequestDto.SkillLevel">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -223,11 +225,9 @@
                                             </label>
                                             <label>
                                                 Skill Description
-                                                <textarea class="form-control" placeholder="" name="SkillDescription" asp-for="skillPostResponseDto.Description"></textarea>
+                                                <textarea class="form-control" placeholder="" asp-for="SkillPostRequestDto.Description"></textarea>
                                             </label>
                                         </div>
-                                        <!-- ADD MORE-->
-                                        <a  class="btn"><i class="fa fa-plus"></i> Add Skill</a>
                                         <button class="btn" type="submit"><i class="fa fa-plus"></i> Add Skill</button>
 
                                     </div>
@@ -355,11 +355,32 @@
 </div>
 
 @section addjs {
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var customSkills = [];
+            $('#addCustomSkill').click(function (e) {
+                e.preventDefault();
+                $('#customSkillInput').show();
+            });
+
+            $('#addSkillButton').click(function () {
+                var newSkill = $('#newCustomSkill').val();
+                if (newSkill) {
+                    customSkills.push(newSkill);
+                    $('#skillSelect').append($('<option>', {
+                        value: newSkill,
+                        text: newSkill
+                    }));
+                    $('#newCustomSkill').val(''); 
+                    $('#customSkillInput').hide(); 
+                }
+            });
+
+
+
+
             $('#skillGroupSelect').change(function () {
-                console.log("2");
                 var skillGroupId = $(this).val();
                 var $skillSelect = $('#skillSelect');
                 $skillSelect.empty(); 
@@ -377,9 +398,8 @@
                             if (Array.isArray(data)) {
                                 $.each(data, function (index, item) {
                                     $skillSelect.append($('<option>', {
-                                        value: item.value,
-                                        name:item.name,
-                                        text: item.text
+                                        value: item,
+                                        text: item
                                     }));
                                 });
                             }
@@ -388,7 +408,6 @@
                             console.error('Error loading skills');
                             $skillSelect.empty().append($('<option>', {
                                 value: '',
-                               
                                 text: 'Error loading skills'
                             }));
                         }

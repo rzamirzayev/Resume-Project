@@ -66,23 +66,24 @@ namespace WebUI.Areas.Admin.Controllers
         [HttpGet]
         public async Task<JsonResult> GetSkillsByGroup(int skillGroupId)
         {
-            var skills = await _skillPostService.GetAllAsync();
-            var filteredSkills = skills
-                .Where(s => s.GroupId == skillGroupId)
-                .Select(s => new
-                {
-                    value = s.Id,
-                    text = s.Name
-                }).ToList();
+            var skills = new List<string>(); 
+            if (skillGroupId == 2) 
+            {
+                skills = new List<string> { "HTML", "CSS", "SASS", "JavaScript" };
+            }
+            if (skillGroupId == 1)
+            {
+                skills = new List<string> { "C#", "Java", "C++" };
+            }
 
-            return Json(filteredSkills);
+            return Json(skills);
         }
 
 
-
-        public async Task<IActionResult> AddSkill([FromForm] AddSkillPostRequestDto model)
+        [HttpPost]
+        public async Task<IActionResult> AddSkill([FromForm] CombinedSkillViewModel model)
         {
-            await _skillPostService.AddAsync(model);
+            await _skillPostService.AddAsync(model.SkillPostRequestDto);
 
 
             return RedirectToAction("Index");

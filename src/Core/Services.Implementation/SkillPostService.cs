@@ -21,11 +21,11 @@ namespace Services.Implementation
         }
         public async Task<AddSkillPostResponseDto> AddAsync(AddSkillPostRequestDto model, CancellationToken cancellationToken = default)
         {
-            var entity = new Skill { Name=model.Name,GroupId=model.GroupId};
+            var entity = new Skill { Name=model.Name,GroupId=model.GroupId,SkillLevel=model.SkillLevel,SkillDesc=model.Description};
             await skillPostRepository.AddAsync(entity, cancellationToken);
             await skillPostRepository.SaveAsync(cancellationToken);
 
-            return new AddSkillPostResponseDto { Id = entity.Id, Name=entity.Name, GroupId = entity.GroupId };
+            return new AddSkillPostResponseDto { Id = entity.Id, Name=entity.Name, GroupId = entity.GroupId ,SkillLevel= (int)entity.SkillLevel,Description=entity.SkillDesc};
         }
 
         public async Task<EditSkillPostDto> EditAsync(EditSkillPostDto model, CancellationToken cancellationToken = default)
