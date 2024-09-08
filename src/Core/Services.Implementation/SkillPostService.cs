@@ -34,6 +34,8 @@ namespace Services.Implementation
 
             entity.Name = model.Name;
             entity.GroupId = model.GroupId;
+            entity.SkillLevel = model.SkillLevel;
+            entity.SkillDesc = model.SkillDesc;
 
             skillPostRepository.Edit(entity);
             await skillPostRepository.SaveAsync(cancellationToken);
@@ -70,6 +72,8 @@ namespace Services.Implementation
                 Id = skill.Id,
                 Name = skill.Name,
                 GroupId = skill.GroupId,
+                SkillDesc=skill.SkillDesc,
+                SkillLevel=(int)skill.SkillLevel
                 
             };
         }
@@ -85,7 +89,7 @@ namespace Services.Implementation
         }
         public async Task<AddSkillGroupResponseDto> AddAsync(AddSkillGroupRequestDto model, CancellationToken cancellationToken = default)
         {
-            var entity = new SkillGroup { Name = model.Name ,TypeId=model.TypeId};
+            var entity = new SkillGroup { Name = model.Name ,TypeId=model.TypeId,GroupDesc=model.GroupDesc};
             await skillGroupRepository.AddAsync(entity, cancellationToken);
             await skillGroupRepository.SaveAsync(cancellationToken);
 
@@ -98,6 +102,7 @@ namespace Services.Implementation
 
             entity.Name = model.Name;
             entity.TypeId= model.TypeId;
+            entity.GroupDesc = model.GroupDesc;
 
             skillGroupRepository.Edit(entity);
             await skillGroupRepository.SaveAsync(cancellationToken);
@@ -112,7 +117,8 @@ namespace Services.Implementation
 {
 Id = m.Id,
 Name = m.Name,
-TypeId=m.TypeId
+TypeId=m.TypeId,
+GroupDesc=m.GroupDesc
 })
 .ToListAsync(cancellationToken);
             return data;
@@ -130,7 +136,8 @@ TypeId=m.TypeId
             {
                 Id = skillGroup.Id,
                 Name = skillGroup.Name,
-                TypeId=skillGroup.TypeId
+                TypeId=skillGroup.TypeId,
+                GroupDesc=skillGroup.GroupDesc
             };
         }
     }

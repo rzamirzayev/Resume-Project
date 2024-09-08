@@ -26,11 +26,15 @@ namespace Services.SkillPosts
     {
         public int TypeId { get; set; }
         public required string Name { get; set; }
+
+        public string GroupDesc { get; set; }
     }
     public class AddSkillGroupResponseDto
     {
         public int Id { get; set; }
         public int TypeId { get; set; }
+        public string GroupDesc { get; set; }
+
         public required string Name { get; set; }
     }
     public class AddSkillTypeRequestDto

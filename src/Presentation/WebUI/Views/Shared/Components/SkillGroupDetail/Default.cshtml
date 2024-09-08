@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SkillGroupGetAllDto>
+
+<h5 class="tittle">Services</h5>
+
+<div class="row padding-20 margin-top-50">
+    <!-- Icon -->
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 text-center">
+            <div class="icon-box i-large ib-black">
+                <div class="ib-icon">
+                    <i class="fa fa-whatsapp"></i>
+                </div>
+                <div class="ib-info">
+                    <h4 class="h6">@item.Name</h4>
+                    <p>
+                        @item.GroupDesc
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    }
+
+</div>

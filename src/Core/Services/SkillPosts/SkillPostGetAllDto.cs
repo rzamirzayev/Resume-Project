@@ -20,6 +20,7 @@ namespace Services.SkillPosts
         public int Id { get; set; }
         public int TypeId { get; set; }
         public required string Name { get; set; }
+        public string GroupDesc { get; set; }
     }
 
     public class SkillTypeGetAllDto

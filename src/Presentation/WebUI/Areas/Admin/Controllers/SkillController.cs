@@ -34,7 +34,8 @@ namespace WebUI.Areas.Admin.Controllers
             {
                 Id = dto.Id,
                 TypeId = dto.TypeId,
-                Name = dto.Name
+                Name = dto.Name,
+                GroupDesc=dto.GroupDesc
             }).ToList();
 
             var skillTypes = skillTypeDtos.Select(dto => new Domain.Entities.SkillType

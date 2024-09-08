@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public int TypeId { get; set; }
         public required string Name { get; set; }
+        public string GroupDesc { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public int? LastModifiedBy { get; set; }
