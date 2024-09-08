@@ -20,6 +20,8 @@ namespace WebUI.Areas.Admin.Controllers
             this.skillGroupService = skllGroupService;
             this.skillTypeService = skillTypeService;
         }
+        [Authorize(Policy = "admin.skill.get")]
+
         public async Task<IActionResult> Index()
         {
             var skillPostDtos = await skillPostService.GetAllAsync();
@@ -90,7 +92,8 @@ namespace WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Remove(int id)
         {
             await skillPostService.RemoveAsync(id);
-            return RedirectToAction("index");
+            var result = new { Success = true, Message = "Silindi" };
+            return new JsonResult(result);
         }
 
     }

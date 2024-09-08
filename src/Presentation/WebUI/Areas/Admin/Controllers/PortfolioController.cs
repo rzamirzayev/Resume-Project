@@ -69,8 +69,9 @@ namespace WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Remove (int id)
         {
-            await portfolioPostervice.RemoveAsync(id);
-            return RedirectToAction("Index");
+            await portfolioPostervice.RemoveAsync(id); 
+            var result = new { Success = true, Message = "Silindi" };
+            return new JsonResult(result);
         }
     }
 }

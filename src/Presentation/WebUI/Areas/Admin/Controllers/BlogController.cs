@@ -61,7 +61,7 @@ namespace WebUI.Areas.Admin.Controllers
         }
         [Authorize(Policy = "admin.blog.edit")]
         [HttpPost]
-        public async Task<IActionResult> Edit(EditBlogPostDto model)
+        public async Task<IActionResult> Edit([FromForm]EditBlogPostDto model)
         {
 
             await blogPostService.EditAsync(model);

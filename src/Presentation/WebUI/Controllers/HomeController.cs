@@ -7,8 +7,6 @@ using Services.PersonDetail;
 
 namespace WebUI.Controllers
 {
-    [AllowAnonymous]
-
     public class HomeController : Controller
     {
         //private readonly DataContext db;
@@ -20,25 +18,25 @@ namespace WebUI.Controllers
             this.contactPostService = contactPostService;
             this.personDetailService = personDetailService;
         }
+
+        [AllowAnonymous]
+
         public async Task<IActionResult> Index()
         {
-            var data = await personDetailService.GetAllAsync();
-            return View(data);
+            return View();
         }
+
+        [AllowAnonymous]
 
         public IActionResult Contact()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Contact(string fullName,string email,string subject,string content)
+        public async Task<IActionResult> Contact(string fullName,string email,string subject,string content)
         {
-            var responseMessage=contactPostService.Add(fullName,email,subject,content);
-            return Json(new
-            {
-                error = false,
-                message = responseMessage
-            }); 
+            await contactPostService.Add(fullName,email,subject,content);
+            return RedirectToAction("Index"); 
         }
 
         public IActionResult Resume()

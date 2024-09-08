@@ -110,22 +110,26 @@ namespace WebUI
 
             builder.Services.AddAuthorization(cfg =>
             {
-                string[] policie = new[] { "admin.blog.get", "admin.blog.create" };
-                    cfg.AddPolicy("admin.blog.get", opt =>
+                //string[] policie = new[] { "admin.blog.get", "admin.blog.create" };
+                //    cfg.AddPolicy("admin.blog.get", opt =>
+                //    {
+                //        opt.RequireAssertion(hendler =>
+                //        {
+
+                //            return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.get", "1");
+                //        });
+                //    });
+                foreach (var item in policies)
+                {
+                    cfg.AddPolicy(item, opt =>
                     {
+                        //opt.RequireClaim("admin.categories.create", "1");
                         opt.RequireAssertion(hendler =>
                         {
-
-                            return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.get", "1");
+                            return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim(item, "1");
                         });
                     });
-                cfg.AddPolicy("admin.blog.create", opt =>
-                {
-                    opt.RequireAssertion(hendler =>
-                    {
-                        return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim("admin.blog.create", "1");
-                    });
-                });
+                }
             });
 
             var app = builder.Build();
