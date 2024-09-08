@@ -17,7 +17,7 @@
                         <!-- Blog -->
                         <section class="about-me padding-top-10">
                           <!-- Personal Info -->
-                @await Component.InvokeAsync("PersonDetail")
+                            @await Component.InvokeAsync("PersonDetail")
 
 
                           <!-- I’m Web Designer -->
@@ -155,167 +155,14 @@
                             class="panel-group accordion padding-20"
                             id="accordion"
                           >
-                            <div class="panel panel-default">
-                              <div class="row">
-                                <div class="col-sm-4">
-                                  <!-- PANEL HEADING -->
-                                  <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                      <a
-                                        data-toggle="collapse"
-                                        data-parent="#accordion"
-                                        href="#collapseOne"
-                                        class="collapsed"
-                                      >
-                                        Photoshop</a
-                                      >
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <!-- Skillls Bars -->
-                                <div class="col-sm-8">
-                                  <div class="progress">
-                                    <div
-                                      class="progress-bar"
-                                      role="progressbar"
-                                      aria-valuenow="80"
-                                      aria-valuemin="0"
-                                      aria-valuemax="100"
-                                      style="width: 80%"
-                                    >
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-
-                                  <!-- Skillls Text -->
-                                  <div
-                                    id="collapseOne"
-                                    class="panel-collapse collapse"
-                                  >
-                                    <div class="panel-body">
-                                      <p>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Proin nibh augue,
-                                        suscipit a, scelerisque sed, lacinia in,
-                                        mi. Cras vel lorem.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Business Administration -->
-
-                            <div class="panel panel-default">
-                              <div class="row">
-                                <div class="col-sm-4">
-                                  <!-- PANEL HEADING -->
-                                  <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                      <a
-                                        data-toggle="collapse"
-                                        data-parent="#accordion"
-                                        href="#collapsetwo"
-                                        class="collapsed"
-                                      >
-                                        Dreamviewer</a
-                                      >
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <!-- Skillls Bars -->
-                                <div class="col-sm-8">
-                                  <div class="progress">
-                                    <div
-                                      class="progress-bar"
-                                      role="progressbar"
-                                      aria-valuenow="60"
-                                      aria-valuemin="0"
-                                      aria-valuemax="100"
-                                      style="width: 60%"
-                                    >
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-
-                                  <!-- Skillls Text -->
-                                  <div
-                                    id="collapsetwo"
-                                    class="panel-collapse collapse"
-                                  >
-                                    <div class="panel-body">
-                                      <p>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Proin nibh augue,
-                                        suscipit a, scelerisque sed, lacinia in,
-                                        mi. Cras vel lorem.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- HTML -->
-                            <div class="panel panel-default">
-                              <div class="row">
-                                <div class="col-sm-4">
-                                  <!-- PANEL HEADING -->
-                                  <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                      <a
-                                        data-toggle="collapse"
-                                        data-parent="#accordion"
-                                        href="#collapsethree"
-                                        class="collapsed"
-                                      >
-                                        HTML5/CSS3</a
-                                      >
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <!-- Skillls Bars -->
-                                <div class="col-sm-8">
-                                  <div class="progress">
-                                    <div
-                                      class="progress-bar"
-                                      role="progressbar"
-                                      aria-valuenow="100"
-                                      aria-valuemin="0"
-                                      aria-valuemax="100"
-                                      style="width: 100%"
-                                    >
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-
-                                  <!-- Skillls Text -->
-                                  <div
-                                    id="collapsethree"
-                                    class="panel-collapse collapse"
-                                  >
-                                    <div class="panel-body">
-                                      <p>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Proin nibh augue,
-                                        suscipit a, scelerisque sed, lacinia in,
-                                        mi. Cras vel lorem.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            @await Component.InvokeAsync("SkillDetail")
                           </div>
                         </section>
                       </div>
                     </div>
+                            
 
-                    <!-- RESUME -->
+                  <!-- RESUME -->
                     <div role="tabpanel" class="tab-pane fade" id="resume">
                       <div class="inside-sec">
                         <!-- BIO AND SKILLS -->

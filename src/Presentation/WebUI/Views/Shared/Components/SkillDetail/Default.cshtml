@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SkillPostGetAllDto>
+
+    @{
+
+    int index = 0;
+    }
+@foreach(var item in Model)
+{
+    int? skillLevelPoint = (item.SkillLevel * 100) / 5;
+    <div class="panel panel-default">
+        <div class="row">
+            <div class="col-sm-4">
+                <!-- PANEL HEADING -->
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse"
+                       data-parent="#accordion"
+                       href="#@index"
+                       class="collapsed">
+                            @item.Name
+                        </a>
+                    </h4>
+                </div>
+            </div>
+
+            <!-- Skillls Bars -->
+            <div class="col-sm-8">
+                <div class="progress">
+                    <div class="progress-bar"
+                     role="progressbar"
+                     aria-valuenow="80"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     style="width: @skillLevelPoint%">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
+
+                <!-- Skillls Text -->
+                <div id="@index"
+                 class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            @item.SkillDesc
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    index++;
+}

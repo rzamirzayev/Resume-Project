@@ -21,11 +21,11 @@ namespace Services.Implementation
         }
         public async Task<AddSkillPostResponseDto> AddAsync(AddSkillPostRequestDto model, CancellationToken cancellationToken = default)
         {
-            var entity = new Skill { Name=model.Name,GroupId=model.GroupId,SkillLevel=model.SkillLevel,SkillDesc=model.Description};
+            var entity = new Skill { Name=model.Name,GroupId=model.GroupId,SkillLevel=model.SkillLevel,SkillDesc=model.SkillDesc };
             await skillPostRepository.AddAsync(entity, cancellationToken);
             await skillPostRepository.SaveAsync(cancellationToken);
 
-            return new AddSkillPostResponseDto { Id = entity.Id, Name=entity.Name, GroupId = entity.GroupId ,SkillLevel= (int)entity.SkillLevel,Description=entity.SkillDesc};
+            return new AddSkillPostResponseDto { Id = entity.Id, Name=entity.Name, GroupId = entity.GroupId ,SkillLevel= (int)entity.SkillLevel, SkillDesc = entity.SkillDesc};
         }
 
         public async Task<EditSkillPostDto> EditAsync(EditSkillPostDto model, CancellationToken cancellationToken = default)
@@ -49,6 +49,8 @@ namespace Services.Implementation
         Id = m.Id,
         Name=m.Name,
         GroupId= m.GroupId,
+        SkillDesc= m.SkillDesc,
+        SkillLevel= m.SkillLevel,
 
     })
     .ToListAsync(cancellationToken);
@@ -68,6 +70,7 @@ namespace Services.Implementation
                 Id = skill.Id,
                 Name = skill.Name,
                 GroupId = skill.GroupId,
+                
             };
         }
     }
