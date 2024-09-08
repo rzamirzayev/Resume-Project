@@ -1,27 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.BlogPosts;
+using Services.PortfolioPosts;
 using Services.SkillPosts;
 using WebUI.Areas.Admin.Models;
 
 namespace WebUI.Areas.Admin.Controllers
 {
+    [Area("admin")]
     public class SkillController : Controller
     {
-        private readonly ISkillPostService _skillPostService;
-        private readonly ISkillGroupService _skillGroupService;
-        private readonly ISkillTypeService _skillTypeService;
+        private readonly ISkillPostService skillPostService;
+        private readonly ISkillGroupService skillGroupService;
+        private readonly ISkillTypeService skillTypeService;
         public SkillController(ISkillPostService skillPostService,ISkillGroupService skllGroupService, ISkillTypeService skillTypeService) 
         {
-            _skillPostService= skillPostService;
-            _skillGroupService = skllGroupService;
-            _skillTypeService = skillTypeService;
+            this.skillPostService= skillPostService;
+            this.skillGroupService = skllGroupService;
+            this.skillTypeService = skillTypeService;
         }
-        [Area("admin")]
         public async Task<IActionResult> Index()
         {
-            var skillPostDtos = await _skillPostService.GetAllAsync();
-            var skillGroupDtos = await _skillGroupService.GetAllAsync();
-            var skillTypeDtos = await _skillTypeService.GetAllAsync();
+            var skillPostDtos = await skillPostService.GetAllAsync();
+            var skillGroupDtos = await skillGroupService.GetAllAsync();
+            var skillTypeDtos = await skillTypeService.GetAllAsync();
 
             var skills = skillPostDtos.Select(dto => new Domain.Entities.Skill
             {
@@ -56,37 +59,39 @@ namespace WebUI.Areas.Admin.Controllers
             return View(skillViewModel);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateSkill(
-    string skillName,
-    int skillGroupId,
-    string skillGroupName,
-    int skillGroupTypeId,
-    string skillTypeName)
+
+        public async Task<IActionResult> Edit(int id)
         {
-     
-            var skillType = await _skillTypeService.GetByIdAsync(skillGroupTypeId);
-            if (skillType == null)
+            var skillPost = await skillPostService.GetByIdAsync(id);
+
+            if (skillPost == null)
             {
-            
-                var skillTypeDto = new AddSkillTypeRequestDto { Name = skillTypeName };
-                await _skillTypeService.AddAsync(skillTypeDto);
+                return NotFound();
             }
 
-      
-            var skillGroup = await _skillGroupService.GetByIdAsync(skillGroupId);
-            if (skillGroup == null)
+            var model = new EditSkillPostDto
             {
-      
-                var skillGroupDto = new AddSkillGroupRequestDto { Name = skillGroupName, TypeId = skillGroupTypeId };
-                await _skillGroupService.AddAsync(skillGroupDto);
-            }
+                Id = skillPost.Id,
+                Name = skillPost.Name,
+                SkillDesc = skillPost.SkillDesc,
+                SkillLevel = skillPost.SkillLevel
+            };
 
-            var skillDto = new AddSkillPostRequestDto { Name = skillName, GroupId = skillGroupId };
-            await _skillPostService.AddAsync(skillDto);
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditSkillPostDto model)
+        {
 
-
+            await skillPostService.EditAsync(model);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            await skillPostService.RemoveAsync(id);
+            return RedirectToAction("index");
+        }
+
     }
 }

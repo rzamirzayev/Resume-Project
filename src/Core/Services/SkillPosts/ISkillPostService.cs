@@ -17,6 +17,9 @@ cancellationToken = default);
         Task<EditSkillPostDto> EditAsync(EditSkillPostDto model, CancellationToken cancellationToken = default);
 
         Task<EditSkillPostDto> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+
+        Task RemoveAsync(int id, CancellationToken cancellationToken = default);
+
     }
     public interface ISkillGroupService
     {

@@ -33,7 +33,6 @@ namespace Services.Implementation
             var entity = await skillPostRepository.GetAsync(m => m.Id == model.Id, cancellationToken);
 
             entity.Name = model.Name;
-            entity.GroupId = model.GroupId;
             entity.SkillLevel = model.SkillLevel;
             entity.SkillDesc = model.SkillDesc;
 
@@ -71,11 +70,16 @@ namespace Services.Implementation
             {
                 Id = skill.Id,
                 Name = skill.Name,
-                GroupId = skill.GroupId,
                 SkillDesc=skill.SkillDesc,
                 SkillLevel=(int)skill.SkillLevel
                 
             };
+        }
+        public async Task RemoveAsync(int id, CancellationToken cancellationToken = default)
+        {
+            var entity = await skillPostRepository.GetAsync(m => m.Id == id, cancellationToken);
+            skillPostRepository.Remove(entity);
+            await skillPostRepository.SaveAsync(cancellationToken);
         }
     }
 

@@ -23,7 +23,6 @@
                                 <th>Skill</th>
                                 <th>Skill Group</th>
                                 <th>Skill Type</th>
-                                <th><a class="btn btn-success" asp-action="Create">Add</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +39,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-success" asp-action="Edit" asp-route-id="@skill.Id">Edit</a>
-                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@skill.Id">Delete</a>
+                                        <a class="btn btn-danger" asp-action="Remove" asp-route-id="@skill.Id" onclick="removeEntity(this,'@skill.Name');return false;">Delete</a>
                                     </td>
                                 </tr>
                             }
@@ -53,3 +52,41 @@
         <!-- Diğer Tablo veya İçerik Alanları Buraya Gelecek -->
     </div>
 </div>
+@section addcss{
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    }
+@section addjs{
+    <script src="~/lib/sweetalert2/sweetalert2.all.min.js"></script>
+    <script>
+
+        function removeEntity(element, name) {
+            consoloe.log("sil");
+            Swal.fire({
+                title: `${name}, silmək istədiyinizdən əminsiniz?`,
+                text: "Silindikdən sonra geri dondere bilmiyessiz!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Bəli!",
+                cancelButtonText: "Xeyr"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let href = element.getAttribute('href');
+
+
+                    fetch(href, {
+                        method: 'post'
+                    }).then(response => response.json())
+                        .then(response => {
+                            window.location.reload();
+                        })
+                        .catch(err => console.log(err));
+                }
+            });
+        }
+
+
+    </script>
+    }
+

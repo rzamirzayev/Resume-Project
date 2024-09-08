@@ -64,7 +64,7 @@
                                     <td>@item.Desc</td>
                                     <td><img width="200" src="~/uploads/@item.ImagePath" /></td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
-                                    <td><a class="btn btn-warning" asp-action="Remove" asp-route-id="@item.Id" onclick="removeEntity(this,'@item.Title');return false;">Delete</a> </td>
+                                    <td><a class="btn btn-warning" asp-action="Remove" asp-route-id="@item.Id" onclick="removeEntity('@item.Title');return false;">Delete</a> </td>
                                 </tr>
                             }
                         </tbody>
@@ -84,6 +84,8 @@
      <script>
 
             function removeEntity(element, name) {
+            consoloe.log("sil");
+
                 Swal.fire({
                     title: `${name}, silmək istədiyinizdən əminsiniz?`,
                     text: "Silindikdən sonra geri dondere bilmiyessiz!",
@@ -100,9 +102,6 @@
 
                         fetch(href, {
                             method: 'post'
-                            headers:{
-                                'X-Requested-With':'XMLHttpRequest'
-                            }
                         }).then(response => response.json())
                             .then(response => {
                                 window.location.reload();
