@@ -102,7 +102,7 @@ namespace WebUI
             {
                 cfg.LoginPath = "/signin.html";
                 cfg.AccessDeniedPath = "/accessdenied.html";
-                cfg.Cookie.Name = "ogani";
+                cfg.Cookie.Name = "resume";
                 cfg.Cookie.HttpOnly = true;
             });
 
@@ -123,7 +123,6 @@ namespace WebUI
                 {
                     cfg.AddPolicy(item, opt =>
                     {
-                        //opt.RequireClaim("admin.categories.create", "1");
                         opt.RequireAssertion(hendler =>
                         {
                             return hendler.User.IsInRole("SuperAdmin") || hendler.User.HasClaim(item, "1");

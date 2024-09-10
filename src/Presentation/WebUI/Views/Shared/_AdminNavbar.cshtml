@@ -1,0 +1,42 @@
+﻿<nav class="headernav">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <button type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#nav-tabis"
+            aria-expanded="false">
+        <span class="tittle">MENU</span>
+        <span class="fa fa-navicon icon-nav"></span>
+    </button>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-tabis">
+        <ul class="isop-filter nav nav-pills">
+            <li role="presentation" class="active">
+                <a asp-controller="home"
+                   asp-action="index"><i class="icon-user"></i>Dashboard</a>
+            </li>
+            <li role="presentation">
+                <a asp-controller="roles"
+                   asp-action="index"><i class="icon-book-open"></i>Roles</a>
+
+            </li>
+            <li role="presentation">
+                <a asp-controller="portfolio"
+                   asp-action="index"><i class="icon-rocket"></i>PORTFOLIO</a>
+
+            </li>
+            <li role="presentation">
+                <a asp-controller="blog"
+                   asp-action="index"><i class="icon-note"></i>BLOG</a>
+
+            </li>
+            <li role="presentation">
+                <a asp-controller="skill"
+                   asp-action="index">
+                    <i class="icon-pencil"></i>Skill
+                </a>
+
+            </li>
+        </ul>
+    </div>
+</nav>

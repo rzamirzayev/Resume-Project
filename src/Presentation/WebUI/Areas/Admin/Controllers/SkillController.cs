@@ -20,7 +20,7 @@ namespace WebUI.Areas.Admin.Controllers
             this.skillGroupService = skllGroupService;
             this.skillTypeService = skillTypeService;
         }
-        [Authorize(Policy = "admin.skill.get")]
+        [Authorize(Policy = "admin.skills.get")]
 
         public async Task<IActionResult> Index()
         {
@@ -61,6 +61,7 @@ namespace WebUI.Areas.Admin.Controllers
             return View(skillViewModel);
         }
 
+        [Authorize(Policy = "admin.skills.edit")]
 
         public async Task<IActionResult> Edit(int id)
         {
@@ -81,6 +82,8 @@ namespace WebUI.Areas.Admin.Controllers
 
             return View(model);
         }
+        [Authorize(Policy = "admin.skills.edit")]
+
         [HttpPost]
         public async Task<IActionResult> Edit(EditSkillPostDto model)
         {
@@ -88,6 +91,7 @@ namespace WebUI.Areas.Admin.Controllers
             await skillPostService.EditAsync(model);
             return RedirectToAction("Index");
         }
+        [Authorize(Policy = "admin.skills.remove")]
 
         public async Task<IActionResult> Remove(int id)
         {

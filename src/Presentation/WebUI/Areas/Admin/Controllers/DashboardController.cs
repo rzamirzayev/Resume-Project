@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.BlogPosts;
 using Services.SkillPosts;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace WebUI.Areas.Admin.Controllers
             return Json(skills);
         }
 
-
+        [Authorize("admin.skills.add")]
         [HttpPost]
         public async Task<IActionResult> AddSkill([FromForm] CombinedSkillViewModel model)
         {

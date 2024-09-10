@@ -73,7 +73,6 @@ namespace WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Remove(int id)
         {
             var entity = await roleManager.Roles.FirstOrDefaultAsync(m => m.Id == id);
-            
             await roleManager.DeleteAsync(entity!);
             return RedirectToAction(nameof(Index));
         }
