@@ -1,4 +1,5 @@
-﻿using Services.SkillPosts;
+﻿using Services.PersonDetail;
+using Services.SkillPosts;
 
 namespace WebUI.Areas.Admin.Models
 {
@@ -7,5 +8,7 @@ namespace WebUI.Areas.Admin.Models
         public SkillViewModel SkillViewModel { get; set; }
 
         public AddSkillPostRequestDto SkillPostRequestDto { get; set; }
+        public EditPersonDetailDto EditPersonDetailDto { get; set;}
+        
     }
 }

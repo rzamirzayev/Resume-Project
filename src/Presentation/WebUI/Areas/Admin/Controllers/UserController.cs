@@ -12,6 +12,7 @@ namespace WebUI.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<ResumeUser> userManager;
+        
         private readonly IEmailService emailService;
 
         public UserController(UserManager<ResumeUser> userManager, IEmailService emailService)
@@ -86,5 +87,7 @@ namespace WebUI.Areas.Admin.Controllers
             await userManager.DeleteAsync(entity!);
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

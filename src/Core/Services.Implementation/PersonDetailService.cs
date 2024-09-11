@@ -31,7 +31,7 @@ namespace Services.Implementation
         public async Task<EditPersonDetailDto> EditAsync(EditPersonDetailDto model, CancellationToken cancellationToken = default)
         {
             var entity = await personDetailRepository.GetAsync(m => m.Id == model.Id, cancellationToken);
-
+            entity.Id= model.Id;
             entity.FullName = model.FullName;
             entity.Experience = model.Experience;
             entity.DateOfBirth = model.DateOfBirth;

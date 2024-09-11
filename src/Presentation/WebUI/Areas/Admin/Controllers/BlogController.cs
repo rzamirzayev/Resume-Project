@@ -14,7 +14,7 @@ namespace WebUI.Areas.Admin.Controllers
             this.blogPostService = blogPostService;
         }
         [Authorize(Policy = "admin.blog.get")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index() 
         {
             var data = await blogPostService.GetAllAsync();
             return View(data);

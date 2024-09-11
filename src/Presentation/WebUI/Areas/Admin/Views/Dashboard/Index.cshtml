@@ -37,34 +37,55 @@
                                 <i class="fa fa-camera"></i> Click to add diploma
                                 <input type="file" style="display: none;">
                             </label>
-                            <form>
+                            <form method="post" asp-action="PersonDetail">
+                                <input type="hidden" asp-for="EditPersonDetailDto.Id" />
                                 <ul class="personal-info">
-                                    <li>
-                                        <p>
-                                            <span>
-                                                <input class="form-control" type="text" placeholder="Title">
-                                            </span>
-                                            <input class="form-control" type="text" placeholder="Title">
+                                    <li> 
+                                        <p style="display:flex;">
+                                            Fullname
+                                            <input class="form-control" type="text"  asp-for="EditPersonDetailDto.FullName" >
                                         </p>
                                     </li>
                                     <li>
-                                        <p>
-                                            <span>
-                                                <input class="form-control" type="text" placeholder="Title">
-                                            </span>
-                                            <input class="form-control" type="text" placeholder="Title">
+                                        <p style="display:flex;">
+                                            Experience
+                                            <input class="form-control" type="text" asp-for="EditPersonDetailDto.Experience">
                                         </p>
                                     </li>
                                     <li>
-                                        <p>
-                                            <span>
-                                                <input class="form-control" type="text" placeholder="Title">
-                                            </span>
-                                            <input class="form-control" type="text" placeholder="Title">
+                                        <p style="display:flex;">
+                                            DateOfBirth
+                                            <input class="form-control" type="text" asp-for="EditPersonDetailDto.DateOfBirth">
                                         </p>
                                     </li>
-                                    <li> <a href="#" class="btn"><i class="fa fa-plus"></i> ADD INFO</a> </li>
+                                    <li>
+                                        <p style="display:flex;">
+                                            Location
+                                            <input class="form-control" type="text"  asp-for="EditPersonDetailDto.Location">
+                                        </p>
+                                    </li>
+                                                                        <li>
+                                        <p style="display:flex;">
+                                            Fax
+                                            <input class="form-control" type="text"  asp-for="EditPersonDetailDto.Fax">
+                                        </p>
+                                    </li>
+                                                                        <li>
+                                        <p style="display:flex;">
+                                            Bio
+                                            <input class="form-control" type="text"  asp-for="EditPersonDetailDto.Bio">
+                                        </p>
+                                    </li>
+                                                                        <li>
+                                        <p style="display:flex;">
+                                            Website
+                                            <input class="form-control" type="text"  asp-for="EditPersonDetailDto.Website">
+                                        </p>
+                                    </li>
+                                    <button class="btn" type="submit"><i class="fa fa-plus"></i>Save</button>
+
                                 </ul>
+
                             </form>
 
                             <!-- Attachments -->
@@ -84,41 +105,6 @@
                                     </span>
                                 </p>
                                 <a href="#" class="btn"><i class="fa fa-plus"></i> Add Attachment</a>
-                            </div>
-
-                            <!-- Social Profiles -->
-                            <h5 class="tittle">Social Profiles</h5>
-                            <div class="social-icon bor-btm padding-25">
-                                <ul>
-                                    <li>
-                                        <i class="fa fa-facebook"></i>
-                                        <input class="form-control" type="text" placeholder="facebook.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-twitter"></i>
-                                        <input class="form-control" type="text" placeholder="twitter.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-google-plus"></i>
-                                        <input class="form-control" type="text" placeholder="google.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-linkedin"></i>
-                                        <input class="form-control" type="text" placeholder="linkedin.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-dribbble"></i>
-                                        <input class="form-control" type="text" placeholder="dribbble.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-behance"></i>
-                                        <input class="form-control" type="text" placeholder="behance.com/billgates">
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-stumbleupon"></i>
-                                        <input class="form-control" type="text" placeholder="stumbleupon.com/billgates">
-                                    </li>
-                                </ul>
                             </div>
 
                             <!-- Contact Me -->

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Services.BlogPosts;
+using Services.PersonDetail;
 using Services.SkillPosts;
-using System.Collections.Generic;
 using WebUI.Areas.Admin.Models;
 
 namespace WebUI.Areas.Admin.Controllers
@@ -14,11 +13,13 @@ namespace WebUI.Areas.Admin.Controllers
         private readonly ISkillPostService _skillPostService;
         private readonly ISkillGroupService _skillGroupService;
         private readonly ISkillTypeService _skillTypeService;
-        public DashboardController(ISkillPostService skillPostService, ISkillGroupService skllGroupService, ISkillTypeService skillTypeService)
+        private readonly IPersonDetailService personDetailService;
+        public DashboardController(ISkillPostService skillPostService, ISkillGroupService skllGroupService, ISkillTypeService skillTypeService,IPersonDetailService personDetailService)
         {
             _skillPostService = skillPostService;
             _skillGroupService = skllGroupService;
             _skillTypeService = skillTypeService;
+            this.personDetailService = personDetailService;
         }
 
         public async Task<IActionResult> Index()
@@ -52,15 +53,39 @@ namespace WebUI.Areas.Admin.Controllers
             {
                 Skills = skills,
                 SkillGroups = skillGroups,
-                SkillTypes = skillTypes
+                SkillTypes = skillTypes,
+               
             };
 
+            
+            var person = await personDetailService.GetByIdAsync(3);
+            var model = new EditPersonDetailDto
+            {
+                Id = person.Id,
+                FullName = person.FullName,
+                Experience = person.Experience,
+                DateOfBirth = person.DateOfBirth,
+                Location = person.Location,
+                Fax = person.Fax,
+                Bio = person.Bio,
+                Website = person.Website,
+            };
             var viewModel = new CombinedSkillViewModel
             {
-                SkillViewModel = skillViewModel
+                SkillViewModel = skillViewModel,
+                EditPersonDetailDto =model
             };
 
             return View(viewModel);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> PersonDetail(CombinedSkillViewModel model)
+        {
+
+            await personDetailService.EditAsync(model.EditPersonDetailDto);
+            return RedirectToAction("Index");
         }
 
 
