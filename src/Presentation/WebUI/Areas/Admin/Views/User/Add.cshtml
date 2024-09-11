@@ -1,0 +1,25 @@
+﻿@model Domain.Entities.Membership.ResumeUser
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+<div class="container">
+    <form method="post" style="margin-top:100px" >
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label for="exampleTitle">Email</label>
+            <input type="text" class="form-control" id="exampleTitle" aria-describedby="TitleHelp" placeholder="Enter Email" name="email">
+
+        </div>
+             <div class="form-group">
+            <label for="exampleTitle">Password</label>
+            <input class="form-control" id="exampleTitle" type="password" aria-describedby="TitleHelp" placeholder="Enter Password" name="password">
+        </div>
+        <a class="btn btn-success" asp-action="index">Back</a>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

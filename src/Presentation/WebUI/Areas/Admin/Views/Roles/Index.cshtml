@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ResumeUser>
+﻿@model IEnumerable<ResumeRole>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -53,10 +53,10 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Body</th>
-                                <th>ImagePath</th>
-                                <th><a class="btn btn-success" asp-action="create">Create</a></th>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>NormalizedName</th>
+                                <th><a class="btn btn-success" asp-action="add">Create</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,10 +64,8 @@
                             {
                                 <tr>
                                     <td>@item.Id</td>
-                                    <td>@item.UserName</td>
-                                    <td>@item.Email</td>
-                                    <td>@item.EmailConfirmed</td>
-
+                                    <td>@item.Name</td>
+                                    <td>@item.NormalizedName</td>
                                     <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
                                     <td><a class="btn btn-warning delete-button" asp-action="Remove" asp-route-id="@item.Id">Delete</a> </td>
 

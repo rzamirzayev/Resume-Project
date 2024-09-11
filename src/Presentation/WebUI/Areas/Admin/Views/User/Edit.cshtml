@@ -1,0 +1,20 @@
+﻿@model Domain.Entities.Membership.ResumeUser
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div class="container">
+    <form method="post" style="margin-top:100px">
+        <div class="form-group">
+            <label for="exampleTitle">Name</label>
+            <input type="text" class="form-control" id="exampleTitle" aria-describedby="TitleHelp" asp-for="UserName">
+            <span asp-validation-for="UserName" class="text text-danger"></span>
+        </div>
+        <a class="btn btn-success" asp-action="index">Back</a>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

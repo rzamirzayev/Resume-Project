@@ -1,4 +1,9 @@
-﻿<nav class="headernav">
+﻿<style>
+    .isop-filter li{
+        width:17%;
+    }
+</style>
+<nav class="headernav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <button type="button"
             class="navbar-toggle collapsed"
@@ -18,6 +23,11 @@
             <li role="presentation">
                 <a asp-controller="roles"
                    asp-action="index"><i class="icon-book-open"></i>Roles</a>
+
+            </li>
+                        <li role="presentation">
+                <a asp-controller="user"
+                   asp-action="index"><i class="icon-book-open"></i>Users</a>
 
             </li>
             <li role="presentation">
